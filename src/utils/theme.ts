@@ -1,31 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
-interface ITheme {
-  breakPoint: {
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-    xxl: string;
-  };
-  fontColor: {
-    primary: string;
-    secondary: string;
-  };
-  color: {
-    primary: string;
-    primaryVariant: string;
-    secondary: string;
-    secondaryVariant: string;
-    background: string;
-    error: string;
-    gray: string;
-    white: string;
-    black: string;
-  };
-}
+import { ThemeInterface } from "../interfaces/theme-interface";
 
-const breakPoint: ITheme["breakPoint"] = {
+const breakPoint: ThemeInterface["breakPoint"] = {
   sm: "640px",
   md: "768px",
   lg: "1024px",
@@ -33,10 +10,11 @@ const breakPoint: ITheme["breakPoint"] = {
   xxl: "1536px",
 };
 
+// colors
 const primaryColor = "#421ed4";
 const secondaryColor = "#d41e3f";
 
-export const light: ITheme = {
+export const light: ThemeInterface = {
   breakPoint,
   fontColor: {
     primary: "#000000", // done
@@ -48,6 +26,7 @@ export const light: ITheme = {
     secondary: secondaryColor, // done
     secondaryVariant: "#e6b802",
     background: "#F4F4F6", // done
+    backgroundVariant: "#d4d4d4", // done
     error: "#ba0000", // done
     gray: "#a1a1a1", // done
     white: "#ffffff", // done
@@ -55,7 +34,7 @@ export const light: ITheme = {
   },
 };
 
-export const dark: ITheme = {
+export const dark: ThemeInterface = {
   breakPoint,
   fontColor: {
     primary: "#FFFFFF", // done
@@ -67,6 +46,7 @@ export const dark: ITheme = {
     secondary: secondaryColor, // done
     secondaryVariant: "#e6b802",
     background: "#202124", // done
+    backgroundVariant: "#2e2e2e", // done
     error: "#ED374D", // done
     gray: "#a1a1a1", // done
     white: "#171717", // done
@@ -75,7 +55,7 @@ export const dark: ITheme = {
 };
 
 interface IGlobalStylesProps {
-  theme: ITheme;
+  theme: ThemeInterface;
 }
 
 export const GlobalStyles = createGlobalStyle<IGlobalStylesProps>`

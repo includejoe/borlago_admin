@@ -1,20 +1,33 @@
 import { ThemeProvider } from "styled-components";
+import { Routes, Route } from "react-router-dom";
 
 import { light, dark, GlobalStyles } from "./utils/theme";
-import { useThemeContext } from "./contexts/ThemeContext";
+import { useThemeContext } from "./contexts/themeContext";
+
+// layouts
+import DashboardLayout from "./layouts/dashboardLayout";
+
+// pages
+import LoginPage from "./pages/login";
+import HomePage from "./pages/home";
 
 const App: React.FC = () => {
-  const { isDark, toggleTheme } = useThemeContext();
-
-  const changeTheme = () => {
-    toggleTheme();
-  };
+  const { isDark } = useThemeContext();
 
   return (
     <ThemeProvider theme={isDark ? dark : light}>
       <GlobalStyles />
-      <h1>BorlaGo Administrator Dashboard</h1>
-      <button onClick={changeTheme}>Change Theme</button>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <DashboardLayout>
+              <HomePage />
+            </DashboardLayout>
+          }
+        />
+        <Route path="/login/" element={<LoginPage />} />
+      </Routes>
     </ThemeProvider>
   );
 };
