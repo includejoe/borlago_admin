@@ -1,5 +1,6 @@
-import { useThemeContext } from "../../contexts/themeContext";
-import { PageContainer } from "../../commonStyles";
+import { Button } from "@/src/components/button";
+import { PageContainer } from "@src/commonStyles";
+import { useThemeContext } from "@/src/contexts/themeContext";
 
 const HomePage = () => {
   const { toggleTheme } = useThemeContext();
@@ -10,9 +11,7 @@ const HomePage = () => {
 
   return (
     <PageContainer>
-      <h1>BorlaGo Administrator Dashboard</h1>
-      <h1>Home Page</h1>
-      <button onClick={changeTheme}>Change Theme</button>
+      <Button onClick={changeTheme}>TOGGLE THEME</Button>
     </PageContainer>
   );
 };

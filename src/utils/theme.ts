@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
-import { ThemeInterface } from "../interfaces/theme-interface";
+import { useThemeContext } from "@contexts/themeContext";
+import { Theme } from "@src/types/theme";
 
-const breakPoint: ThemeInterface["breakPoint"] = {
+const breakPoint: Theme["breakPoint"] = {
   sm: "640px",
   md: "768px",
   lg: "1024px",
@@ -12,9 +13,9 @@ const breakPoint: ThemeInterface["breakPoint"] = {
 
 // colors
 const primaryColor = "#421ed4";
-const secondaryColor = "#d41e3f";
+const secondaryColor = "#8a4699";
 
-export const light: ThemeInterface = {
+export const light: Theme = {
   breakPoint,
   fontColor: {
     primary: "#000000", // done
@@ -34,7 +35,7 @@ export const light: ThemeInterface = {
   },
 };
 
-export const dark: ThemeInterface = {
+export const dark: Theme = {
   breakPoint,
   fontColor: {
     primary: "#FFFFFF", // done
@@ -48,15 +49,21 @@ export const dark: ThemeInterface = {
     background: "#202124", // done
     backgroundVariant: "#2e2e2e", // done
     error: "#ED374D", // done
-    gray: "#a1a1a1", // done
+    gray: "#383838", // done
     white: "#171717", // done
     black: "#FFFFFF", // done
   },
 };
 
 interface IGlobalStylesProps {
-  theme: ThemeInterface;
+  theme: Theme;
 }
+
+export const useTheme = () => {
+  const { isDark } = useThemeContext();
+
+  return isDark ? dark : light;
+};
 
 export const GlobalStyles = createGlobalStyle<IGlobalStylesProps>`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
@@ -66,8 +73,6 @@ export const GlobalStyles = createGlobalStyle<IGlobalStylesProps>`
       padding: 0;
       box-sizing: border-box;
       outline: none;
-      background-color: ${({ theme }) => theme.color.background};
-      color: ${({ theme }) => theme.color.black};
       font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;

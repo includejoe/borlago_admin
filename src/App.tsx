@@ -1,15 +1,14 @@
 import { ThemeProvider } from "styled-components";
 import { Routes, Route } from "react-router-dom";
 
-import { light, dark, GlobalStyles } from "./utils/theme";
-import { useThemeContext } from "./contexts/themeContext";
-
-// layouts
-import DashboardLayout from "./layouts/dashboardLayout";
+import { light, dark, GlobalStyles } from "@utils/theme";
+import { useThemeContext } from "@contexts/themeContext";
+import { SideBarContextProvider } from "@contexts/sideBarContext";
+import DashboardLayout from "@layouts/dashboardLayout";
 
 // pages
-import LoginPage from "./pages/login";
-import HomePage from "./pages/home";
+import LoginPage from "@pages/login";
+import HomePage from "@pages/home";
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
@@ -17,17 +16,20 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={isDark ? dark : light}>
       <GlobalStyles />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <DashboardLayout>
-              <HomePage />
-            </DashboardLayout>
-          }
-        />
-        <Route path="/login/" element={<LoginPage />} />
-      </Routes>
+      <SideBarContextProvider>
+        <Routes>
+          <Route path="/login/" element={<LoginPage />} />
+
+          <Route
+            path="/"
+            element={
+              <DashboardLayout>
+                <HomePage />
+              </DashboardLayout>
+            }
+          />
+        </Routes>
+      </SideBarContextProvider>
     </ThemeProvider>
   );
 };

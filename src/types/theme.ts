@@ -1,4 +1,4 @@
-export interface ThemeInterface {
+export type Theme = {
   breakPoint: {
     sm: string;
     md: string;
@@ -22,4 +22,4 @@ export interface ThemeInterface {
     white: string;
     black: string;
   };
-}
+};

@@ -1,11 +1,10 @@
-import { SideBarContainer } from "./styles";
+import { useSideBarContext } from "@contexts/sideBarContext";
+
+import { SideBarWrapper } from "./styles";
 
 const SideBar = () => {
-  return (
-    <SideBarContainer isShowing={true}>
-      <h1>Side Bar</h1>
-    </SideBarContainer>
-  );
+  const { isShowing } = useSideBarContext();
+  return <SideBarWrapper isShowing={isShowing}></SideBarWrapper>;
 };
 
 export default SideBar;
