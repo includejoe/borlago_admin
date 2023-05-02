@@ -79,24 +79,28 @@ interface IGlobalStylesProps {
 }
 
 export const GlobalStyles = createGlobalStyle<IGlobalStylesProps>`
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
-    ::-webkit-scrollbar {
-        width: 0;
-    }
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      background-color: ${({ theme }) => theme.color.background};
+      color: ${({ theme }) => theme.color.black};
+      font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
 
-    body {
-        background-color: ${({ theme }) => theme.color.background};
-        color: ${({ theme }) => theme.color.black}
-    }
+  ::-webkit-scrollbar {
+      width: 0;
+  }
+
+  body {
+      background-color: ${({ theme }) => theme.color.background};
+      color: ${({ theme }) => theme.color.black}
+  }
 `;
