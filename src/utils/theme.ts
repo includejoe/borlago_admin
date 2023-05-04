@@ -12,47 +12,47 @@ const breakPoint: Theme["breakPoint"] = {
 };
 
 // colors
-const primaryColor = "#421ed4";
-const primaryColorVariant = "#421ed437";
-const secondaryColor = "#8a4699";
+const primaryVariantColor = "#421ed437";
+const secondaryColor = "#940a28";
+const secondaryColorVariant = "#940a2857";
 
 export const light: Theme = {
   breakPoint,
   fontColor: {
-    primary: "#000000", // done
-    secondary: "#525252", // done
+    primary: "#000000",
+    secondary: "#525252",
   },
   color: {
-    primary: primaryColor, // done
-    primaryVariant: primaryColorVariant, // done
-    secondary: secondaryColor, // done
-    secondaryVariant: "#e6b802",
-    background: "#d4d4d4", // done
-    backgroundVariant: "#F4F4F6", // done
-    error: "#ba0000", // done
-    gray: "#a1a1a1", // done
-    white: "#ffffff", // done
-    black: "#000000", // done
+    primary: "#5A38E3",
+    primaryVariant: primaryVariantColor,
+    secondary: secondaryColor,
+    secondaryVariant: secondaryColorVariant,
+    background: "#d4d4d4",
+    backgroundVariant: "#F4F4F6",
+    error: "#ba0000",
+    gray: "#a1a1a1",
+    white: "#ffffff",
+    black: "#000000",
   },
 };
 
 export const dark: Theme = {
   breakPoint,
   fontColor: {
-    primary: "#FFFFFF", // done
-    secondary: "#e3e3e3", // done
+    primary: "#FFFFFF",
+    secondary: "#e3e3e3",
   },
   color: {
-    primary: primaryColor, // done
-    primaryVariant: primaryColorVariant, // done
-    secondary: secondaryColor, // done
-    secondaryVariant: "#e6b802",
-    background: "#2e2e2e", // done
-    backgroundVariant: "#202124", // done
-    error: "#ED374D", // done
-    gray: "#383838", // done
-    white: "#171717", // done
-    black: "#FFFFFF", // done
+    primary: "#775CE8",
+    primaryVariant: primaryVariantColor,
+    secondary: secondaryColor,
+    secondaryVariant: secondaryColorVariant,
+    background: "#2e2e2e",
+    backgroundVariant: "#202124",
+    error: "#ED374D",
+    gray: "#383838",
+    white: "#171717",
+    black: "#FFFFFF",
   },
 };
 

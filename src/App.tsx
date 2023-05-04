@@ -10,8 +10,8 @@ import DashboardLayout from "@layouts/dashboardLayout";
 import LoginPage from "@pages/login";
 import HomePage from "@pages/home";
 import CollectorsPage from "@pages/collectors";
-import CollectorUnitsPage from "@pages/home";
-import SettingsPage from "@pages/home";
+import CollectorUnitsPage from "@pages/collectorUnits";
+import SettingsPage from "@pages/settings";
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();

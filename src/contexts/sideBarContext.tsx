@@ -13,7 +13,7 @@ interface SideBarContextInterface extends SideBarStateInterface {
 }
 
 const initialState: SideBarStateInterface = {
-  isShowing: false,
+  isShowing: true,
 };
 
 if (localStorage.getItem("sideBar")) {

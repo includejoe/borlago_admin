@@ -8,13 +8,11 @@ import {
 import { useTranslation } from "react-i18next";
 
 import { useSideBarContext } from "@contexts/sideBarContext";
-import { useTheme } from "@utils/theme";
 import { SideBarWrapper, List, Link, Logout } from "./styles";
 
 const SideBar = () => {
   const { isShowing } = useSideBarContext();
   const { t } = useTranslation();
-  const theme = useTheme();
 
   return (
     <SideBarWrapper isShowing={isShowing}>
@@ -49,7 +47,7 @@ const SideBar = () => {
 
         <li>
           <Logout>
-            <MdLogout color={theme.color.error} className="icon" />
+            <MdLogout className="icon" />
             {t("sideBar.logout")}
           </Logout>
         </li>

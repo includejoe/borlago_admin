@@ -36,15 +36,25 @@ export const Left = styled.div`
   }
 
   .logo {
-    width: 200px;
+    width: 250px;
     height: 40px;
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.color.secondary};
-    color: ${({ theme }) => theme.color.black};
+    background-color: ${({ theme }) => theme.color.primary};
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
+    .logo {
+      display: none;
+    }
   }
 `;
 

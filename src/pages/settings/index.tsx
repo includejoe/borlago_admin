@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import { PageContainer } from "@src/commonStyles";
 
-const CollectorsPage = () => {
+const SettingsPage = () => {
   const { t } = useTranslation();
 
   return (
@@ -12,4 +12,4 @@ const CollectorsPage = () => {
   );
 };
 
-export default CollectorsPage;
+export default SettingsPage;

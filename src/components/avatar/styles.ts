@@ -21,6 +21,8 @@ export const Wrapper = styled.div<WrapperProps>`
   }
 
   .default {
-    display: ${({ imgUrl }) => (imgUrl ? "none" : "flex")};
+    display: ${({ imgUrl }) => (imgUrl ? "none" : "block")};
+    font-size: ${({ size }) => (size ? size : "45px")};
+    color: ${({ theme }) => theme.fontColor.secondary};
   }
 `;

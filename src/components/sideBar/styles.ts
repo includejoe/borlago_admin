@@ -51,7 +51,6 @@ export const List = styled.ul`
   li:last-of-type {
     position: absolute;
     bottom: 0;
-    left: 0;
   }
 `;
 
@@ -102,19 +101,17 @@ export const Logout = styled.div`
   margin: 18px, 0;
   padding-left: 35px;
   text-decoration: none;
-  border-left: 5px solid transparent;
-  color: ${({ theme }) => theme.color.black};
-  border-top: 1px solid ${({ theme }) => theme.color.gray};
+  color: ${({ theme }) => theme.fontColor.secondary};
   transition: all 200ms ease-in-out;
 
   .icon {
     margin-right: 25px;
+    color: ${({ theme }) => theme.color.error};
     font-size: 25px;
   }
 
   &:hover {
     background: rgba(186, 0, 0, 0.2);
-    border-top: 1px solid transparent;
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.sm}) {
