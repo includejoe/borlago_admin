@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import { Button } from "@/src/components/button";
 import { PageContainer } from "@src/commonStyles";
 import { useThemeContext } from "@/src/contexts/themeContext";
 
 const HomePage = () => {
+  const { t } = useTranslation();
   const { toggleTheme } = useThemeContext();
 
   const changeTheme = () => {
@@ -11,7 +14,7 @@ const HomePage = () => {
 
   return (
     <PageContainer>
-      <Button onClick={changeTheme}>TOGGLE THEME</Button>
+      <Button onClick={changeTheme}>{t("btn.theme")}</Button>
     </PageContainer>
   );
 };

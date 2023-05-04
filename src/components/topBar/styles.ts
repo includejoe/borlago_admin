@@ -4,7 +4,7 @@ export const TopBarWrapper = styled.div`
   width: 100%;
   height: 70px;
   position: fixed;
-  background: ${({ theme }) => theme.color.gray};
+  box-shadow: 1px 1px 5px 2px ${({ theme }) => theme.color.backgroundVariant};
   top: 0;
   display: flex;
   align-items: center;
