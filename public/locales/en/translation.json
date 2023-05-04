@@ -1,5 +1,16 @@
 {
-  "btn": {
-    "theme": "TOGGLE THEME"
+  "sideBar": {
+    "home": "Home",
+    "collectors": "Collectors",
+    "collectorUnits": "Collector Units",
+    "settings": "Settings",
+    "logout": "Log Out"
+  },
+
+  "page": {
+    "home": {},
+    "collectors": {},
+    "collectorUnits": {},
+    "settings": {}
   }
 }

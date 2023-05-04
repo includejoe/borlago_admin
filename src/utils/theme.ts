@@ -13,6 +13,7 @@ const breakPoint: Theme["breakPoint"] = {
 
 // colors
 const primaryColor = "#421ed4";
+const primaryColorVariant = "#421ed437";
 const secondaryColor = "#8a4699";
 
 export const light: Theme = {
@@ -23,11 +24,11 @@ export const light: Theme = {
   },
   color: {
     primary: primaryColor, // done
-    primaryVariant: "rgba(53, 189, 14, 0.2)",
+    primaryVariant: primaryColorVariant, // done
     secondary: secondaryColor, // done
     secondaryVariant: "#e6b802",
-    background: "#F4F4F6", // done
-    backgroundVariant: "#d4d4d4", // done
+    background: "#d4d4d4", // done
+    backgroundVariant: "#F4F4F6", // done
     error: "#ba0000", // done
     gray: "#a1a1a1", // done
     white: "#ffffff", // done
@@ -43,11 +44,11 @@ export const dark: Theme = {
   },
   color: {
     primary: primaryColor, // done
-    primaryVariant: "rgba(53, 189, 14, 0.2)",
+    primaryVariant: primaryColorVariant, // done
     secondary: secondaryColor, // done
     secondaryVariant: "#e6b802",
-    background: "#202124", // done
-    backgroundVariant: "#2e2e2e", // done
+    background: "#2e2e2e", // done
+    backgroundVariant: "#202124", // done
     error: "#ED374D", // done
     gray: "#383838", // done
     white: "#171717", // done
@@ -66,13 +67,12 @@ export const useTheme = () => {
 };
 
 export const GlobalStyles = createGlobalStyle<IGlobalStylesProps>`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       outline: none;
+      font-size: 15px;
       font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;

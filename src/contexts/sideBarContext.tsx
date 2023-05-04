@@ -54,7 +54,7 @@ export function SideBarContextProvider(props: React.PropsWithChildren) {
   function toggleSideBar(): void {
     state.isShowing
       ? localStorage.setItem("sideBar", "show")
-      : localStorage.removeItem("sideBar");
+      : localStorage.setItem("sideBar", "!show");
 
     dispatch({
       type: "TOGGLE_SIDEBAR",

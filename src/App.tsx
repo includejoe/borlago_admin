@@ -9,6 +9,9 @@ import DashboardLayout from "@layouts/dashboardLayout";
 // pages
 import LoginPage from "@pages/login";
 import HomePage from "@pages/home";
+import CollectorsPage from "@pages/collectors";
+import CollectorUnitsPage from "@pages/home";
+import SettingsPage from "@pages/home";
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
@@ -25,6 +28,33 @@ const App: React.FC = () => {
             element={
               <DashboardLayout>
                 <HomePage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/collectors/"
+            element={
+              <DashboardLayout>
+                <CollectorsPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/collector-units/"
+            element={
+              <DashboardLayout>
+                <CollectorUnitsPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/settings/"
+            element={
+              <DashboardLayout>
+                <SettingsPage />
               </DashboardLayout>
             }
           />

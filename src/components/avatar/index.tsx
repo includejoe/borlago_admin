@@ -28,7 +28,7 @@ const Avatar: React.FC<AvatarProps> = ({ imgUrl, size, color }) => {
         <div className="default">
           <MdAccountCircle
             size={size ? size : 45}
-            color={color ? color : theme.color.gray}
+            color={color ? color : theme.color.black}
           />
         </div>
       )}

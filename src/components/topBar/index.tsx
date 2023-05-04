@@ -14,8 +14,8 @@ const TopBar = () => {
   return (
     <TopBarWrapper>
       <Left>
-        <div className="icon" onClick={onMenuClick}>
-          <MdMenu />
+        <div className="icon-wrapper" onClick={onMenuClick}>
+          <MdMenu className="icon" />
         </div>
         <div className="logo"></div>
       </Left>
