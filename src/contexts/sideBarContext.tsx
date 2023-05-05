@@ -24,6 +24,11 @@ if (localStorage.getItem("sideBar")) {
   }
 }
 
+const SideBarContext = createContext<SideBarContextInterface>({
+  isShowing: initialState.isShowing,
+  toggleSideBar: () => null,
+});
+
 function themeReducer(
   state: SideBarStateInterface,
   action: SideBarActionInterface
@@ -37,11 +42,6 @@ function themeReducer(
       return state;
   }
 }
-
-const SideBarContext = createContext<SideBarContextInterface>({
-  isShowing: initialState.isShowing,
-  toggleSideBar: () => null,
-});
 
 // eslint-disable-next-line
 export function useSideBarContext() {

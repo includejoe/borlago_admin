@@ -24,6 +24,11 @@ if (localStorage.getItem("theme")) {
   }
 }
 
+const ThemeContext = createContext<ThemeContextInterface>({
+  isDark: initialState.isDark,
+  toggleTheme: () => null,
+});
+
 function themeReducer(
   state: ThemeStateInterface,
   action: ThemeActionInterface
@@ -37,11 +42,6 @@ function themeReducer(
       return state;
   }
 }
-
-const ThemeContext = createContext<ThemeContextInterface>({
-  isDark: initialState.isDark,
-  toggleTheme: () => null,
-});
 
 // eslint-disable-next-line
 export function useThemeContext() {
