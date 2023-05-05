@@ -27,7 +27,7 @@ export const light: Theme = {
     primaryVariant: primaryVariantColor,
     secondary: secondaryColor,
     secondaryVariant: secondaryColorVariant,
-    background: "#d4d4d4",
+    background: "#f0f0f0",
     backgroundVariant: "#F4F4F6",
     error: "#ba0000",
     gray: "#a1a1a1",

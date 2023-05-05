@@ -15,7 +15,7 @@ export const Button = styled.button<ButtonProps>`
   border-radius: 5px;
   cursor: ${({ cursor }) => (cursor ? cursor : "pointer")};
   width: ${({ width }) => (width ? width : "150px")};
-  height: ${({ height }) => (height ? height : "40px")};
+  height: ${({ height }) => (height ? height : "45px")};
   color: ${({ fontColor }) => (fontColor ? fontColor : "#ffffff")};
   font-weight: 500;
   transition: 0.35s all ease-in-out;

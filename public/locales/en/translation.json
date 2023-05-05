@@ -15,9 +15,34 @@
   },
 
   "page": {
+    "login": {
+      "forgotPassword": "Forgot your password?",
+      "welcome": "Welcome back!",
+      "login": "Please login to continue"
+    },
     "home": {},
     "collectors": {},
     "collectorUnits": {},
     "settings": {}
+  },
+
+  "btn": {
+    "login": "Log In"
+  },
+
+  "error": {
+    "required": "Required*",
+    "validEmail": "Must be a valid email address"
+  },
+
+  "placeholder": {
+    "email": "Enter your email address",
+    "password": "Enter your password"
+  },
+
+  "label": {
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me"
   }
 }

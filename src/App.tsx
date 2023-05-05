@@ -13,6 +13,9 @@ import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import SettingsPage from "@pages/settings";
 
+// TODO: 1. Create login page
+// TODO: 2. Create auth context
+
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
 

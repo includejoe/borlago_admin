@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { PageContainer } from "@src/commonStyles";
+import { PageContainer } from "@layouts/dashboardLayout/styles";
 
 const SettingsPage = () => {
   const { t } = useTranslation();

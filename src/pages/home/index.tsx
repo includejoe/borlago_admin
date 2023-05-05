@@ -1,5 +1,5 @@
 import HomeCard from "@/src/components/homeCard";
-import { PageContainer } from "@src/commonStyles";
+import { PageContainer } from "@layouts/dashboardLayout/styles";
 import { CardContainer } from "./styles";
 
 const HomePage = () => {
