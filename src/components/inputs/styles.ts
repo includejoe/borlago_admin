@@ -5,24 +5,16 @@ export const InputArea = styled.div`
   width: 100%;
   margin-bottom: 15px;
 
+  label {
+    font-weight: 600;
+  }
+
   p {
-    color: red;
+    color: red !important;
     font-weight: 600;
     font-size: 10px;
     margin: 0;
     width: 100%;
-    padding: 0 10px;
-  }
-
-  label {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
-    p {
-      color: #752424;
-    }
   }
 `;
 

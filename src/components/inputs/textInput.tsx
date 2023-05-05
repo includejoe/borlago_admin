@@ -3,6 +3,7 @@ import { InputArea, InputField } from "./styles";
 export interface TextInputProps {
   id: string;
   name: string;
+  type?: string;
   placeholder: string;
   label: string;
   value: string;
@@ -16,6 +17,7 @@ const TextInput: React.FC<TextInputProps> = ({
   id,
   name,
   placeholder,
+  type,
   label,
   value,
   error,
@@ -29,7 +31,7 @@ const TextInput: React.FC<TextInputProps> = ({
       <InputField
         id={id}
         name={name}
-        type="text"
+        type={type ? type : "text"}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

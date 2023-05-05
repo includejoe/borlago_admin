@@ -17,6 +17,14 @@ export const Dividend = styled.div`
     width: 65%;
     background-color: ${({ theme }) => theme.color.primary};
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.lg}) {
+    width: 100%;
+
+    &:last-of-type {
+      display: none;
+    }
+  }
 `;
 
 export const FormWrapper = styled.form`
@@ -27,29 +35,6 @@ export const FormWrapper = styled.form`
   justify-content: center;
   align-items: center;
   padding: 0 15%;
-
-  label {
-    font-weight: 600;
-  }
-
-  p {
-    margin-top: 1em;
-
-    a {
-      text-decoration: underline;
-    }
-  }
-
-  .logo-area {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 17px;
-
-    img {
-      height: 120px;
-    }
-  }
 
   .greeting {
     width: 100%;
@@ -65,16 +50,6 @@ export const FormWrapper = styled.form`
     h3 {
       color: ${({ theme }) => theme.fontColor.secondary};
       font-weight: 500;
-    }
-  }
-
-  .down-text {
-    font-weight: 500;
-    text-align: center;
-    color: ${({ theme }) => theme.color.black};
-
-    a {
-      color: ${({ theme }) => theme.color.primary};
     }
   }
 
@@ -108,11 +83,7 @@ export const FormWrapper = styled.form`
     }
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
-    .logo-area {
-      img {
-        height: 150px;
-      }
-    }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.lg}) {
+    padding: 0 8%;
   }
 `;
