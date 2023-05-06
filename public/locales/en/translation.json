@@ -6,7 +6,8 @@
     "collectors": "Collectors",
     "collectorUnits": "Collector Units",
     "settings": "Settings",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "confirmLogout": "Are you sure you want to log out ?"
   },
 
   "topBar": {
@@ -33,7 +34,9 @@
   },
 
   "btn": {
-    "login": "Log In"
+    "login": "Log In",
+    "yes": "Yes",
+    "no": "No"
   },
 
   "error": {

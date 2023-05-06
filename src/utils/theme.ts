@@ -17,6 +17,7 @@ const secondaryColor = "#940a28";
 const secondaryColorVariant = "#940a2857";
 
 export const light: Theme = {
+  isDark: false,
   breakPoint,
   fontColor: {
     primary: "#000000",
@@ -40,6 +41,7 @@ export const light: Theme = {
 };
 
 export const dark: Theme = {
+  isDark: true,
   breakPoint,
   fontColor: {
     primary: "#FFFFFF",

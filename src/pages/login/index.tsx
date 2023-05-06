@@ -138,7 +138,7 @@ const LoginPage = () => {
             <Link to="/forgot-password/">{t("page.login.forgotPassword")}</Link>
           </div>
 
-          <Button width="100%" disabled={isLoading} type="submit">
+          <Button height="45px" width="100%" disabled={isLoading} type="submit">
             {t("btn.login")}
           </Button>
         </FormWrapper>

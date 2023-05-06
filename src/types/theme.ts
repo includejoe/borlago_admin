@@ -1,4 +1,5 @@
 export type Theme = {
+  isDark: boolean;
   breakPoint: {
     sm: string;
     md: string;

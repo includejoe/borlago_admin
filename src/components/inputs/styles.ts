@@ -23,7 +23,7 @@ export const PasswordInputWrapper = styled.div`
   position: relative;
 
   .icon {
-    color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }) => theme.fontColor.secondary};
     font-size: 28px;
     position: absolute;
     top: 55%;

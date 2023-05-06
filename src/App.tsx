@@ -14,7 +14,8 @@ import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import SettingsPage from "@pages/settings";
 
-// TODO: confirmation modals (logout confirmation)
+// TODO: get collectors
+// TODO: collector detail page
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
