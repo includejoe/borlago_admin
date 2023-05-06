@@ -111,7 +111,7 @@ export const Logout = styled.div`
   }
 
   &:hover {
-    background: rgba(186, 0, 0, 0.2);
+    background: ${({ theme }) => theme.color.errorVariant};
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.sm}) {

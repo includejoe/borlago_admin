@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "react-query";
 
-import borlagoapi from "@/src/api";
 import { useAuthContext } from "@contexts/authContext";
-import TextInput from "@/src/components/inputs/textInput";
-import PasswordInput from "@/src/components/inputs/passwordinput";
+import ResponseDialog from "@components/responseDialog";
+import TextInput from "@components/inputs/textInput";
+import PasswordInput from "@components/inputs/passwordInput";
 import { Button } from "@/src/components/button";
+import borlagoapi from "@/src/api";
 import { PageContainer, Dividend, FormWrapper } from "./styles";
 
 interface LoginData {
@@ -24,6 +25,13 @@ const LoginPage = () => {
   const { login } = useAuthContext();
   const [isLoading, setIsLoading] = useState(false);
   const [stayLoggedIn, setStayLoggedIn] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+  }, [error]);
 
   const { mutate } = useMutation({
     mutationKey: "login",
@@ -44,13 +52,13 @@ const LoginPage = () => {
               setIsLoading(false);
               navigate("/");
             })
-            .catch((err) => {
-              console.log(err);
+            .catch(() => {
+              setError(true);
               setIsLoading(false);
             });
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
+          setError(true);
           setIsLoading(false);
         });
     },
@@ -76,6 +84,13 @@ const LoginPage = () => {
 
   return (
     <PageContainer>
+      <ResponseDialog
+        show={error}
+        setShow={setError}
+        type="error"
+        message={t("error.invalidCredentials")}
+      />
+
       <Dividend>
         <FormWrapper autoComplete="off" onSubmit={formik.handleSubmit}>
           <div className="greeting">
@@ -109,6 +124,7 @@ const LoginPage = () => {
             }
             error={formik.errors.password}
           />
+
           <div className="actions">
             <div className="stay-logged-in">
               <input

@@ -38,7 +38,8 @@
 
   "error": {
     "required": "Required*",
-    "validEmail": "Must be a valid email address"
+    "validEmail": "Must be a valid email address",
+    "invalidCredentials": "Invalid Credentials"
   },
 
   "placeholder": {

@@ -18,6 +18,9 @@ export type Theme = {
     background: string;
     backgroundVariant: string;
     error: string;
+    errorVariant: string;
+    success: string;
+    successVariant: string;
     gray: string;
     white: string;
     black: string;
