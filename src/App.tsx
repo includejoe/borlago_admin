@@ -14,10 +14,9 @@ import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import SettingsPage from "@pages/settings";
 
-// TODO: 1. handle login errors using pop-up dialogue boxes
-// TODO: 1. custom password field, hide unhide password
-// TODO: 2. confirmation modals (logout confirmation)
-// TODO: 3. fix sidebar error
+// TODO: custom password field, hide unhide password
+// TODO: confirmation modals (logout confirmation)
+// TODO: fix sidebar error
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();

@@ -41,7 +41,7 @@ const LoginPage = () => {
         .then(({ data }) => {
           const { email, jwt } = data;
           borlagoapi
-            .get(`/user/detail/${email}`, {
+            .get(`/user/detail/${email}/`, {
               headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${jwt}`,

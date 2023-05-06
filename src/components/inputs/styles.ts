@@ -4,6 +4,7 @@ export const InputArea = styled.div`
   text-align: left;
   width: 100%;
   margin-bottom: 15px;
+  position: relative;
 
   label {
     font-weight: 600;
@@ -15,6 +16,20 @@ export const InputArea = styled.div`
     font-size: 10px;
     margin: 0;
     width: 100%;
+  }
+`;
+
+export const PasswordInputWrapper = styled.div`
+  position: relative;
+
+  .icon {
+    color: ${({ theme }) => theme.color.primary};
+    font-size: 28px;
+    position: absolute;
+    top: 55%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
   }
 `;
 

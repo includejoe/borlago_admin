@@ -1,7 +1,8 @@
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useState } from "react";
 
 import { TextInputProps } from "./textInput";
-import { InputArea, InputField } from "./styles";
+import { InputArea, InputField, PasswordInputWrapper } from "./styles";
 
 const PasswordInput: React.FC<TextInputProps> = ({
   id,
@@ -14,20 +15,27 @@ const PasswordInput: React.FC<TextInputProps> = ({
   onBlur,
   isError,
 }) => {
-  const [hideText, setHidetext] = useState(true);
+  const [hideText, setHideText] = useState(true);
 
   return (
     <InputArea>
       <label htmlFor={id}>{label}</label>
-      <InputField
-        id={id}
-        name={name}
-        type={hideText ? "password" : "text"}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
-      />
+      <PasswordInputWrapper>
+        <InputField
+          id={id}
+          name={name}
+          type={hideText ? "password" : "text"}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+        />
+        {hideText ? (
+          <IoMdEye className="icon" onClick={() => setHideText(false)} />
+        ) : (
+          <IoMdEyeOff className="icon" onClick={() => setHideText(true)} />
+        )}
+      </PasswordInputWrapper>
       {isError ? <p>{error}</p> : null}
     </InputArea>
   );
