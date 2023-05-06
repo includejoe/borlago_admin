@@ -17,7 +17,7 @@ export const PageContainer = styled.div`
 export const InnerContainer = styled.div<InnerContainerProps>`
   width: ${({ isShowing }) => (isShowing ? "80%" : "100%")};
   margin-left: ${({ isShowing }) => (isShowing ? "20%" : "0")};
-  margin-top: 70px;
+  margin-top: 60px;
   background: ${({ theme }) => theme.color.background};
   transition: all 200ms ease-in-out;
 

@@ -67,7 +67,7 @@ export const FormWrapper = styled.form`
     }
   }
 
-  .remember-me {
+  .stay-logged-in {
     color: ${({ theme }) => theme.color.primary};
     display: flex;
 

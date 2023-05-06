@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { useMutation } from "react-query";
 
 import borlagoapi from "@/src/api";
+import { useAuthContext } from "@contexts/authContext";
 import TextInput from "@/src/components/inputs/textInput";
 import PasswordInput from "@/src/components/inputs/passwordinput";
 import { Button } from "@/src/components/button";
@@ -20,7 +21,9 @@ interface LoginData {
 const LoginPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { login } = useAuthContext();
   const [isLoading, setIsLoading] = useState(false);
+  const [stayLoggedIn, setStayLoggedIn] = useState(false);
 
   const { mutate } = useMutation({
     mutationKey: "login",
@@ -28,13 +31,26 @@ const LoginPage = () => {
       return borlagoapi
         .post("/auth/login/", values)
         .then(({ data }) => {
-          // do something
-          console.log(data);
-          setIsLoading(false);
-          navigate("/");
+          const { email, jwt } = data;
+          borlagoapi
+            .get(`/user/detail/${email}`, {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${jwt}`,
+              },
+            })
+            .then(({ data }) => {
+              login(jwt, data, stayLoggedIn);
+              setIsLoading(false);
+              navigate("/");
+            })
+            .catch((err) => {
+              console.log(err);
+              setIsLoading(false);
+            });
         })
         .catch((err) => {
-          // do something
+          console.log(err);
           setIsLoading(false);
         });
     },
@@ -94,9 +110,14 @@ const LoginPage = () => {
             error={formik.errors.password}
           />
           <div className="actions">
-            <div className="remember-me">
-              <input type="checkbox" id="rememberMe" />
-              <label htmlFor="rememberMe">{t("label.rememberMe")}</label>
+            <div className="stay-logged-in">
+              <input
+                type="checkbox"
+                id="stayLoggedIn"
+                checked={stayLoggedIn}
+                onChange={() => setStayLoggedIn(!stayLoggedIn)}
+              />
+              <label htmlFor="stayLoggedIn">{t("label.stayLoggedIn")}</label>
             </div>
             <Link to="/forgot-password/">{t("page.login.forgotPassword")}</Link>
           </div>

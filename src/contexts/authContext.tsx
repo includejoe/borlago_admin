@@ -17,7 +17,7 @@ interface AuthActionInterface {
 }
 
 interface AuthContextInterface extends AuthStateInterface {
-  login: (token: string, user: User) => void;
+  login: (token: string, user: User, stayLoggedIn: boolean) => void;
   logout: () => void;
 }
 
@@ -79,9 +79,12 @@ export function useAuthContext() {
 export function AuthContextProvider(props: React.PropsWithChildren) {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  function login(token: string, user: User): void {
-    localStorage.setItem("jwtToken", token);
-    localStorage.setItem("user", JSON.stringify(user));
+  function login(token: string, user: User, stayLoggedIn: boolean): void {
+    if (stayLoggedIn) {
+      localStorage.setItem("jwtToken", token);
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+
     dispatch({
       type: "LOGIN",
       payload: { token, user },

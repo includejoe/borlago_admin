@@ -1,10 +1,16 @@
 {
+  "appName": "BorlaGo Administrator",
+
   "sideBar": {
     "home": "Home",
     "collectors": "Collectors",
     "collectorUnits": "Collector Units",
     "settings": "Settings",
     "logout": "Log Out"
+  },
+
+  "topBar": {
+    "hi": "Hi, {{name}}"
   },
 
   "homeCard": {
@@ -43,6 +49,6 @@
   "label": {
     "email": "Email",
     "password": "Password",
-    "rememberMe": "Remember me"
+    "stayLoggedIn": "Stay logged in"
   }
 }

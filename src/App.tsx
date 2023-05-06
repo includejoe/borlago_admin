@@ -2,6 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { Routes, Route } from "react-router-dom";
 
 import { light, dark, GlobalStyles } from "@utils/theme";
+import AuthRoute from "@utils/authRoute";
 import { useThemeContext } from "@contexts/themeContext";
 import { SideBarContextProvider } from "@contexts/sideBarContext";
 import DashboardLayout from "@layouts/dashboardLayout";
@@ -13,8 +14,9 @@ import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import SettingsPage from "@pages/settings";
 
-// TODO: 1. Create login page
-// TODO: 2. Create auth context
+// TODO: 1. handle login errors using pop-up dialogue boxes
+// TODO: 2. confirmation modals (logout confirmation)
+// TODO: 3. fix sidebar error
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
@@ -24,7 +26,14 @@ const App: React.FC = () => {
       <GlobalStyles />
       <SideBarContextProvider>
         <Routes>
-          <Route path="/login/" element={<LoginPage />} />
+          <Route
+            path="/login/"
+            element={
+              <AuthRoute checkAuthenticated={false}>
+                <LoginPage />
+              </AuthRoute>
+            }
+          />
 
           <Route
             path="/"

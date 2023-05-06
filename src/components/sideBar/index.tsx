@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   MdHome,
   MdLogout,
@@ -5,13 +6,14 @@ import {
   MdPerson,
   MdSettings,
 } from "react-icons/md";
-import { useTranslation } from "react-i18next";
 
+import { useAuthContext } from "@/src/contexts/authContext";
 import { useSideBarContext } from "@contexts/sideBarContext";
 import { SideBarWrapper, List, Link, Logout } from "./styles";
 
 const SideBar = () => {
   const { isShowing } = useSideBarContext();
+  const { logout } = useAuthContext();
   const { t } = useTranslation();
 
   return (
@@ -46,7 +48,7 @@ const SideBar = () => {
         </li>
 
         <li>
-          <Logout>
+          <Logout onClick={() => logout()}>
             <MdLogout className="icon" />
             {t("sideBar.logout")}
           </Logout>

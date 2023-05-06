@@ -10,7 +10,7 @@ export const InputArea = styled.div`
   }
 
   p {
-    color: red !important;
+    color: ${({ theme }) => theme.color.error};
     font-weight: 600;
     font-size: 10px;
     margin: 0;
