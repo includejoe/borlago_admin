@@ -34,7 +34,7 @@ export const FormWrapper = styled.form`
   height: 100%;
   justify-content: center;
   align-items: center;
-  padding: 0 15%;
+  padding: 0 10%;
 
   .greeting {
     width: 100%;

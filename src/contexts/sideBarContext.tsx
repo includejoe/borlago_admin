@@ -52,9 +52,8 @@ export function SideBarContextProvider(props: React.PropsWithChildren) {
   const [state, dispatch] = useReducer(themeReducer, initialState);
 
   function toggleSideBar(): void {
-    state.isShowing
-      ? localStorage.setItem("sideBar", "show")
-      : localStorage.setItem("sideBar", "!show");
+    const newIsShowing = !state.isShowing;
+    localStorage.setItem("sideBar", newIsShowing ? "show" : "hide");
 
     dispatch({
       type: "TOGGLE_SIDEBAR",

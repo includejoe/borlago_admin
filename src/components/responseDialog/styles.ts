@@ -21,7 +21,7 @@ export const Wrapper = styled.div<WrapperProps>`
   padding: 10px;
   position: fixed;
   bottom: 20px;
-  left: ${({ show }) => (show ? "50px" : "-1000px")};
+  left: ${({ show }) => (show ? "40px" : "-1000px")};
   transition: all 200ms ease-in-out;
 
   .icon {

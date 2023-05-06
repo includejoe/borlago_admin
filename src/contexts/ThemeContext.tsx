@@ -52,9 +52,8 @@ export function ThemeContextProvider(props: React.PropsWithChildren) {
   const [state, dispatch] = useReducer(themeReducer, initialState);
 
   function toggleTheme(): void {
-    state.isDark
-      ? localStorage.setItem("theme", "light")
-      : localStorage.setItem("theme", "dark");
+    const newIsDark = !state.isDark;
+    localStorage.setItem("theme", newIsDark ? "dark" : "light");
 
     dispatch({
       type: "TOGGLE_THEME",

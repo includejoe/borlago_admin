@@ -14,9 +14,7 @@ import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import SettingsPage from "@pages/settings";
 
-// TODO: custom password field, hide unhide password
 // TODO: confirmation modals (logout confirmation)
-// TODO: fix sidebar error
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
