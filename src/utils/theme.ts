@@ -1,31 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
-interface ITheme {
-  breakPoint: {
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-    xxl: string;
-  };
-  fontColor: {
-    primary: string;
-    secondary: string;
-  };
-  color: {
-    primary: string;
-    primaryVariant: string;
-    secondary: string;
-    secondaryVariant: string;
-    background: string;
-    error: string;
-    gray: string;
-    white: string;
-    black: string;
-  };
-}
+import { useThemeContext } from "@contexts/themeContext";
+import { Theme } from "@src/types/theme";
 
-const breakPoint: ITheme["breakPoint"] = {
+const breakPoint: Theme["breakPoint"] = {
   sm: "640px",
   md: "768px",
   lg: "1024px",
@@ -33,70 +11,89 @@ const breakPoint: ITheme["breakPoint"] = {
   xxl: "1536px",
 };
 
-const primaryColor = "#421ed4";
-const secondaryColor = "#d41e3f";
+// colors
+const primaryVariantColor = "#421ed437";
+const secondaryColor = "#940a28";
+const secondaryColorVariant = "#940a2857";
 
-export const light: ITheme = {
+export const light: Theme = {
+  isDark: false,
   breakPoint,
   fontColor: {
-    primary: "#000000", // done
-    secondary: "#525252", // done
+    primary: "#000000",
+    secondary: "#525252",
   },
   color: {
-    primary: primaryColor, // done
-    primaryVariant: "rgba(53, 189, 14, 0.2)",
-    secondary: secondaryColor, // done
-    secondaryVariant: "#e6b802",
-    background: "#F4F4F6", // done
-    error: "#ba0000", // done
-    gray: "#a1a1a1", // done
-    white: "#ffffff", // done
-    black: "#000000", // done
+    primary: "#5A38E3",
+    primaryVariant: primaryVariantColor,
+    secondary: secondaryColor,
+    secondaryVariant: secondaryColorVariant,
+    background: "#e6e6e6",
+    backgroundVariant: "#F4F4F6",
+    error: "#ba0000",
+    errorVariant: "rgba(186, 0, 0, 0.2)",
+    success: "#02a836",
+    successVariant: "#02a83760",
+    gray: "#a1a1a1",
+    white: "#ffffff",
+    black: "#000000",
   },
 };
 
-export const dark: ITheme = {
+export const dark: Theme = {
+  isDark: true,
   breakPoint,
   fontColor: {
-    primary: "#FFFFFF", // done
-    secondary: "#e3e3e3", // done
+    primary: "#FFFFFF",
+    secondary: "#e3e3e3",
   },
   color: {
-    primary: primaryColor, // done
-    primaryVariant: "rgba(53, 189, 14, 0.2)",
-    secondary: secondaryColor, // done
-    secondaryVariant: "#e6b802",
-    background: "#202124", // done
-    error: "#ED374D", // done
-    gray: "#a1a1a1", // done
-    white: "#171717", // done
-    black: "#FFFFFF", // done
+    primary: "#775CE8",
+    primaryVariant: primaryVariantColor,
+    secondary: secondaryColor,
+    secondaryVariant: secondaryColorVariant,
+    background: "#2e2e2e",
+    backgroundVariant: "#202124",
+    error: "#ED374D",
+    errorVariant: "rgba(186, 0, 0, 0.2)",
+    success: "#17cf50",
+    successVariant: "#02a83760",
+    gray: "#383838",
+    white: "#171717",
+    black: "#FFFFFF",
   },
 };
 
 interface IGlobalStylesProps {
-  theme: ITheme;
+  theme: Theme;
 }
 
+export const useTheme = () => {
+  const { isDark } = useThemeContext();
+
+  return isDark ? dark : light;
+};
+
 export const GlobalStyles = createGlobalStyle<IGlobalStylesProps>`
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      font-size: 15px;
+      font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
 
-    ::-webkit-scrollbar {
-        width: 0;
-    }
+  ::-webkit-scrollbar {
+      width: 0;
+  }
 
-    body {
-        background-color: ${({ theme }) => theme.color.background};
-        color: ${({ theme }) => theme.color.black}
-    }
+  body {
+      background-color: ${({ theme }) => theme.color.background};
+      color: ${({ theme }) => theme.color.black}
+  }
 `;

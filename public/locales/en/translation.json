@@ -1,0 +1,63 @@
+{
+  "appName": "BorlaGo Administrator",
+
+  "sideBar": {
+    "home": "Home",
+    "collectors": "Collectors",
+    "collectorUnits": "Collector Units",
+    "wcr": "Waste Collection Requests",
+    "settings": "Settings",
+    "logout": "Log Out",
+    "confirmLogout": "Are you sure you want to log out ?"
+  },
+
+  "topBar": {
+    "hi": "Hi, {{name}}"
+  },
+
+  "homeCard": {
+    "create": "CREATE COLLECTOR UNIT",
+    "add": "ADD COLLECTOR TO UNIT",
+    "edit": "EDIT COLLECTOR UNIT",
+    "get": "GET COLLECTOR UNIT"
+  },
+
+  "page": {
+    "login": {
+      "forgotPassword": "Forgot your password?",
+      "welcome": "Welcome back!",
+      "login": "Please login to continue"
+    },
+    "home": {},
+    "collectors": {},
+    "collectorUnits": {
+      "available": "Available",
+      "notAvailable": "Not Available"
+    },
+    "settings": {}
+  },
+
+  "btn": {
+    "login": "Log In",
+    "yes": "Yes",
+    "no": "No"
+  },
+
+  "error": {
+    "required": "Required*",
+    "validEmail": "Must be a valid email address",
+    "invalidCredentials": "Invalid Credentials",
+    "wrong": "Oops! Something went wrong :("
+  },
+
+  "placeholder": {
+    "email": "Enter your email address",
+    "password": "Enter your password"
+  },
+
+  "label": {
+    "email": "Email",
+    "password": "Password",
+    "stayLoggedIn": "Stay logged in"
+  }
+}
