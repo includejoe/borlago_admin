@@ -5,6 +5,7 @@
     "home": "Home",
     "collectors": "Collectors",
     "collectorUnits": "Collector Units",
+    "wcr": "Waste Collection Requests",
     "settings": "Settings",
     "logout": "Log Out",
     "confirmLogout": "Are you sure you want to log out ?"
@@ -29,7 +30,10 @@
     },
     "home": {},
     "collectors": {},
-    "collectorUnits": {},
+    "collectorUnits": {
+      "available": "Available",
+      "notAvailable": "Not Available"
+    },
     "settings": {}
   },
 
@@ -42,7 +46,8 @@
   "error": {
     "required": "Required*",
     "validEmail": "Must be a valid email address",
-    "invalidCredentials": "Invalid Credentials"
+    "invalidCredentials": "Invalid Credentials",
+    "wrong": "Oops! Something went wrong :("
   },
 
   "placeholder": {

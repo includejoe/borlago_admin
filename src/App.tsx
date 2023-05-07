@@ -12,9 +12,15 @@ import LoginPage from "@pages/login";
 import HomePage from "@pages/home";
 import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
+import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
+import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import SettingsPage from "@pages/settings";
 
-// TODO: get collectors
+// TODO: collector unit header filter
+// TODO: create collector unit page
+// TODO: add back button to all detail pages
+// TODO: collector unit detail page
+// TODO: collectors page
 // TODO: collector detail page
 
 const App: React.FC = () => {
@@ -57,6 +63,24 @@ const App: React.FC = () => {
             element={
               <DashboardLayout>
                 <CollectorUnitsPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/collector-unit-detail/:id/"
+            element={
+              <DashboardLayout>
+                <CollectorUnitDetailPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/waste-collection-requests/"
+            element={
+              <DashboardLayout>
+                <WasteCollectionRequestsPage />
               </DashboardLayout>
             }
           />

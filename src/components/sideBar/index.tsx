@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { IoMdTrash } from "react-icons/io";
 import {
   MdHome,
   MdLogout,
@@ -49,6 +50,13 @@ const SideBar = () => {
             <Link to="/collector-units/">
               <MdGroup className="icon" />
               {t("sideBar.collectorUnits")}
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/waste-collection-requests/">
+              <IoMdTrash className="icon" />
+              {t("sideBar.wcr")}
             </Link>
           </li>
 

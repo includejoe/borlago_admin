@@ -60,7 +60,7 @@ export const Link = styled(NavLink)`
   display: flex;
   align-items: center;
   margin: 18px, 0;
-  padding-left: 35px;
+  padding-left: 20px;
   text-decoration: none;
   color: ${({ theme }) => theme.fontColor.secondary};
   border-radius: 5px;
