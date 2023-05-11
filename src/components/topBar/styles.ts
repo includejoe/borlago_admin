@@ -27,8 +27,8 @@ export const Left = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 10px;
     cursor: pointer;
-    margin-right: 20px;
 
     .icon {
       font-size: 23px;
@@ -36,14 +36,7 @@ export const Left = styled.div`
   }
 
   .logo {
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: ${({ theme }) => theme.color.primary};
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: ${({ theme }) => theme.fontColor.primary};
     cursor: pointer;
 
     h3 {
