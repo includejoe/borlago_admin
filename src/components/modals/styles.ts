@@ -49,3 +49,21 @@ export const ModalWrapper = styled.div`
     }
   }
 `;
+
+export const FormWrapper = styled.form`
+  width: 48%;
+  height: 70%;
+  background: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.color.black};
+  z-index: 10;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
+    width: 90%;
+  }
+`;

@@ -16,6 +16,8 @@ import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
 import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import SettingsPage from "@pages/settings";
 
+// TODO: make update user details request
+// TODO: create settings page
 // TODO: collector unit header filter
 // TODO: create collector unit page
 // TODO: add back button to all detail pages
@@ -59,7 +61,7 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/collector-units/"
+            path="/units/"
             element={
               <DashboardLayout>
                 <CollectorUnitsPage />
@@ -68,7 +70,7 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/collector-unit-detail/:id/"
+            path="/unit/:id/"
             element={
               <DashboardLayout>
                 <CollectorUnitDetailPage />

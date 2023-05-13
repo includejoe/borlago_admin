@@ -6,7 +6,7 @@ const HomePage = () => {
     <PageContainer>
       <CardContainer>
         <HomeCard to="/" type={1} />
-        <HomeCard to="/collector-units/" type={2} />
+        <HomeCard to="/" type={2} />
       </CardContainer>
       <CardContainer>
         <HomeCard to="/" type={3} />

@@ -20,7 +20,7 @@ const CollectorUnitTile: React.FC<CollectorUnitTileProps> = ({
   const { t } = useTranslation();
 
   return (
-    <Wrapper to={`/collector-unit-detail/${id}/`}>
+    <Wrapper to={`/unit/${id}/`}>
       <div className="name">{name}</div>
       <div className="country">{country}</div>
       <div className="region">{region}</div>

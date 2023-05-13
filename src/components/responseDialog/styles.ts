@@ -8,7 +8,6 @@ interface WrapperProps {
 export const Wrapper = styled.div<WrapperProps>`
   width: 500px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: ${({ theme, error }) =>
     error ? theme.color.errorVariant : theme.color.successVariant};
@@ -26,16 +25,11 @@ export const Wrapper = styled.div<WrapperProps>`
 
   .icon {
     font-size: 25px;
+    margin-right: 20px;
   }
 
   .error {
     color: ${({ theme }) => theme.color.error};
-    cursor: pointer;
-  }
-
-  .close {
-    color: ${({ theme }) => theme.color.error};
-    cursor: pointer;
   }
 
   .success {

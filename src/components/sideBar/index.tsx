@@ -47,7 +47,7 @@ const SideBar = () => {
           </li>
 
           <li>
-            <Link to="/collector-units/">
+            <Link to="/units/">
               <MdGroup className="icon" />
               {t("sideBar.collectorUnits")}
             </Link>
