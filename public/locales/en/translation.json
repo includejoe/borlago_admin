@@ -29,12 +29,22 @@
       "login": "Please login to continue"
     },
     "home": {},
-    "collectors": {},
+    "collectors": {
+      "name": "NAME",
+      "gender": "GENDER",
+      "unit": "UNIT"
+    },
     "collectorUnits": {
       "name": "NAME",
       "country": "COUNTRY",
       "region": "REGION",
       "available": "AVAILABLE"
+    },
+    "wasteCollectionRequests": {
+      "type": "TYPE",
+      "location": "LOCATION",
+      "status": "STATUS",
+      "createdAt": "CREATED AT"
     },
     "settings": {
       "firstName": "New First Name",

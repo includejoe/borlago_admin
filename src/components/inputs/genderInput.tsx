@@ -42,9 +42,9 @@ const GenderInput: React.FC<GenderInputProps> = ({
         <option value="" disabled hidden>
           {t("gender.choose")}
         </option>
-        <option value="male">{t("gender.male")}</option>
-        <option value="female">{t("gender.female")}</option>
-        <option value="other">{t("gender.other")}</option>
+        <option value="Male">{t("gender.male")}</option>
+        <option value="Female">{t("gender.female")}</option>
+        <option value="Other">{t("gender.other")}</option>
       </SelectField>
       {isError ? <p>{error}</p> : null}
     </InputArea>

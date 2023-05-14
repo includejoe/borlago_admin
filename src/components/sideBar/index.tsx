@@ -54,7 +54,7 @@ const SideBar = () => {
           </li>
 
           <li>
-            <Link to="/waste-collection-requests/">
+            <Link to="/wcr/">
               <IoMdTrash className="icon" />
               {t("sideBar.wcr")}
             </Link>

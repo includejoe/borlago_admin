@@ -13,7 +13,9 @@ import HomePage from "@pages/home";
 import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
+import CollectorDetailPage from "@pages/collectorDetail";
 import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
+import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetail";
 import SettingsPage from "@pages/settings";
 
 // TODO: save profile image to storage bucket
@@ -70,6 +72,15 @@ const App: React.FC = () => {
           />
 
           <Route
+            path="/collector/:id/"
+            element={
+              <DashboardLayout>
+                <CollectorDetailPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
             path="/unit/:id/"
             element={
               <DashboardLayout>
@@ -79,10 +90,19 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/waste-collection-requests/"
+            path="/wcr/"
             element={
               <DashboardLayout>
                 <WasteCollectionRequestsPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/wcr/:id/"
+            element={
+              <DashboardLayout>
+                <WasteCollectionRequestDetailPage />
               </DashboardLayout>
             }
           />

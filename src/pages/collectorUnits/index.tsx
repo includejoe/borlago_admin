@@ -4,9 +4,9 @@ import { useQuery } from "react-query";
 import borlagoapi from "@/src/api";
 import { useAuthContext } from "@contexts/authContext";
 import { PageContainer } from "@layouts/dashboardLayout/styles";
-import CollectorUnitTile from "@components/collectorUnitTile";
-import Loader from "@/src/components/loader";
-import { Heading } from "./styles";
+import CollectorUnitTile from "@components/tiles/collectorUnitTile";
+import Loader from "@components/loader";
+import { Heading } from "@src/commonStyles";
 
 const CollectorUnitsPage = () => {
   const { t } = useTranslation();
