@@ -12,6 +12,10 @@ export const PageContainer = styled.div`
   align-items: center;
   padding: 25px;
   transition: all 200ms ease-in-out;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
+    padding: 15px;
+  }
 `;
 
 export const InnerContainer = styled.div<InnerContainerProps>`

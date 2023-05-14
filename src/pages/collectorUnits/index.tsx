@@ -6,6 +6,7 @@ import { useAuthContext } from "@contexts/authContext";
 import { PageContainer } from "@layouts/dashboardLayout/styles";
 import CollectorUnitTile from "@components/collectorUnitTile";
 import Loader from "@/src/components/loader";
+import { Heading } from "./styles";
 
 const CollectorUnitsPage = () => {
   const { t } = useTranslation();
@@ -22,9 +23,16 @@ const CollectorUnitsPage = () => {
 
   return (
     <PageContainer>
+      <Heading>
+        <span>{t("page.collectorUnits.name")}</span>
+        <span>{t("page.collectorUnits.country")}</span>
+        <span>{t("page.collectorUnits.region")}</span>
+        <span>{t("page.collectorUnits.available")}</span>
+      </Heading>
       {isLoading ? (
         <Loader size="md" />
       ) : data ? (
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         data.data.map((unit: any) => (
           <CollectorUnitTile
             key={unit.id}

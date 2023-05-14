@@ -31,8 +31,10 @@
     "home": {},
     "collectors": {},
     "collectorUnits": {
-      "available": "Available",
-      "notAvailable": "Not Available"
+      "name": "NAME",
+      "country": "COUNTRY",
+      "region": "REGION",
+      "available": "AVAILABLE"
     },
     "settings": {
       "firstName": "New First Name",

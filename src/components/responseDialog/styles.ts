@@ -19,6 +19,7 @@ export const Wrapper = styled.div<WrapperProps>`
   z-index: 99;
   padding: 10px;
   position: fixed;
+  color: #fff;
   bottom: 20px;
   left: ${({ show }) => (show ? "40px" : "-1000px")};
   transition: all 200ms ease-in-out;

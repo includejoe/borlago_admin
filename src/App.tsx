@@ -16,8 +16,8 @@ import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
 import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import SettingsPage from "@pages/settings";
 
+// TODO: save profile image to storage bucket
 // TODO: make update user details request
-// TODO: create settings page
 // TODO: collector unit header filter
 // TODO: create collector unit page
 // TODO: add back button to all detail pages

@@ -1,6 +1,8 @@
-import { useTranslation } from "react-i18next";
+import { MdCheckCircle } from "react-icons/md";
+import { IoMdCloseCircle } from "react-icons/io";
 
-import { Wrapper, Available } from "./styles";
+import { useTheme } from "@utils/theme";
+import { Wrapper } from "./styles";
 
 interface CollectorUnitTileProps {
   id: string;
@@ -17,18 +19,20 @@ const CollectorUnitTile: React.FC<CollectorUnitTileProps> = ({
   region,
   available,
 }) => {
-  const { t } = useTranslation();
+  const theme = useTheme();
 
   return (
     <Wrapper to={`/unit/${id}/`}>
-      <div className="name">{name}</div>
-      <div className="country">{country}</div>
-      <div className="region">{region}</div>
-      <Available available={available}>
-        {available
-          ? t("page.collectorUnits.available")
-          : t("page.collectorUnits.notAvailable")}
-      </Available>
+      <span id="name">{name}</span>
+      <span>{country}</span>
+      <span>{region}</span>
+      <span>
+        {available ? (
+          <MdCheckCircle size={18} color={theme.color.success} />
+        ) : (
+          <IoMdCloseCircle size={18} color={theme.color.error} />
+        )}
+      </span>
     </Wrapper>
   );
 };
