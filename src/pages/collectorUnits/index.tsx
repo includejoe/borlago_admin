@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Tooltip } from "react-tooltip";
+import { useQuery } from "react-query";
 import { MdCreate } from "react-icons/md";
 import "react-tooltip/dist/react-tooltip.css";
 
@@ -16,23 +17,19 @@ const CollectorUnitsPage = () => {
   const { t } = useTranslation();
   const { token } = useAuthContext();
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    setIsLoading(true);
-    borlagoapi
-      .get("/administrator/collector-unit/all/", {
+  const { isLoading } = useQuery("collector-units", async () => {
+    const { data } = await borlagoapi.get(
+      "/administrator/collector-unit/all/",
+      {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-      })
-      .then(({ data }) => {
-        setIsLoading(false);
-        setData(data);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      }
+    );
+    setData(data);
+  });
 
   return (
     <PageContainer>
@@ -46,7 +43,7 @@ const CollectorUnitsPage = () => {
       </Heading>
       {isLoading ? (
         <Loader size="md" />
-      ) : data ? (
+      ) : data.length > 0 ? (
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         data.map((unit: any) => (
           <CollectorUnitTile
