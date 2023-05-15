@@ -2,7 +2,6 @@
   "appName": "BorlaGo Administrator",
 
   "sideBar": {
-    "home": "Home",
     "collectors": "Collectors",
     "collectorUnits": "Collector Units",
     "wcr": "Waste Collection Requests",
@@ -21,12 +20,7 @@
       "welcome": "Welcome back!",
       "login": "Please login to continue"
     },
-    "home": {
-      "create": "CREATE COLLECTOR UNIT",
-      "add": "ADD COLLECTOR TO UNIT",
-      "edit": "EDIT COLLECTOR UNIT",
-      "get": "GET COLLECTOR UNIT"
-    },
+    "createCollectorUnit": {},
     "collectors": {
       "name": "NAME",
       "gender": "GENDER",
@@ -36,7 +30,8 @@
       "name": "NAME",
       "country": "COUNTRY",
       "region": "REGION",
-      "available": "AVAILABLE"
+      "available": "AVAILABLE",
+      "createUnit": "Create Collector Unit"
     },
     "wasteCollectionRequests": {
       "type": "TYPE",

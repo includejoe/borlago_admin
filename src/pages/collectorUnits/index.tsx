@@ -1,11 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
+import { Tooltip } from "react-tooltip";
+import { MdCreate } from "react-icons/md";
 
 import borlagoapi from "@/src/api";
 import { useAuthContext } from "@contexts/authContext";
 import CollectorUnitTile from "@components/tiles/collectorUnitTile";
 import Loader from "@components/loader";
 import { Heading, PageContainer } from "@src/commonStyles";
+import { CreateCollectorUnit } from "./styles";
+import "react-tooltip/dist/react-tooltip.css";
 
 const CollectorUnitsPage = () => {
   const { t } = useTranslation();
@@ -45,6 +49,15 @@ const CollectorUnitsPage = () => {
       ) : (
         <h1>{t("error.wrong")}</h1>
       )}
+
+      <CreateCollectorUnit
+        data-tooltip-id="tt-create-unit"
+        data-tooltip-content={t("page.collectorUnits.createUnit") as string}
+        to="/create-unit/"
+      >
+        <MdCreate className="icon" />
+      </CreateCollectorUnit>
+      <Tooltip id="tt-create-unit" />
     </PageContainer>
   );
 };

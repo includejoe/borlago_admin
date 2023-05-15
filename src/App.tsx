@@ -9,7 +9,7 @@ import DashboardLayout from "@layouts/dashboardLayout";
 
 // pages
 import LoginPage from "@pages/login";
-import HomePage from "@pages/home";
+import CreateCollectorUnitPage from "@pages/createCollectorUnit";
 import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
@@ -18,14 +18,12 @@ import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetail";
 import SettingsPage from "@pages/settings";
 
-// TODO: save profile image to storage bucket
-// TODO: make update user details request
 // TODO: collector unit header filter
 // TODO: create collector unit page
-// TODO: add back button to all detail pages
-// TODO: collector unit detail page
-// TODO: collectors page
-// TODO: collector detail page
+// TODO: save profile image to storage bucket
+// TODO: make update user details request
+// TODO: + all detail pages
+// TODO: + back button to all detail pages
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
@@ -36,7 +34,7 @@ const App: React.FC = () => {
       <SideBarContextProvider>
         <Routes>
           <Route
-            path="/login/"
+            path="/"
             element={
               <AuthRoute checkAuthenticated={false}>
                 <LoginPage />
@@ -45,10 +43,10 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/"
+            path="/create-unit/"
             element={
               <DashboardLayout>
-                <HomePage />
+                <CreateCollectorUnitPage />
               </DashboardLayout>
             }
           />
