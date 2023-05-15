@@ -31,7 +31,12 @@
       "country": "COUNTRY",
       "region": "REGION",
       "available": "AVAILABLE",
-      "createUnit": "Create Collector Unit"
+      "createUnit": "Create Collector Unit",
+      "search": "Search Collector Name",
+      "filter": "FIlter Collector Units",
+      "status": "Status",
+      "regions": "Regions",
+      "countries": "Countries"
     },
     "wasteCollectionRequests": {
       "type": "TYPE",
@@ -64,7 +69,8 @@
     "yes": "Yes",
     "no": "No",
     "save": "Save",
-    "submit": "Submit"
+    "submit": "Submit",
+    "filter": "Filter"
   },
 
   "error": {

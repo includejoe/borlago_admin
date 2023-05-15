@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useQuery } from "react-query";
 import { Tooltip } from "react-tooltip";
 import { MdCreate } from "react-icons/md";
+import "react-tooltip/dist/react-tooltip.css";
 
 import borlagoapi from "@/src/api";
 import { useAuthContext } from "@contexts/authContext";
@@ -9,23 +10,34 @@ import CollectorUnitTile from "@components/tiles/collectorUnitTile";
 import Loader from "@components/loader";
 import { Heading, PageContainer } from "@src/commonStyles";
 import { CreateCollectorUnit } from "./styles";
-import "react-tooltip/dist/react-tooltip.css";
+import UnitFilter from "@components/unitFilter";
 
 const CollectorUnitsPage = () => {
   const { t } = useTranslation();
   const { token } = useAuthContext();
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { data, isLoading } = useQuery("collectorUnits", () => {
-    return borlagoapi.get("/administrator/collector-unit/all/", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  });
+  useEffect(() => {
+    setIsLoading(true);
+    borlagoapi
+      .get("/administrator/collector-unit/all/", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(({ data }) => {
+        setIsLoading(false);
+        setData(data);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <PageContainer>
+      <UnitFilter setUnits={setData} />
+
       <Heading>
         <span>{t("page.collectorUnits.name")}</span>
         <span>{t("page.collectorUnits.country")}</span>
@@ -36,7 +48,7 @@ const CollectorUnitsPage = () => {
         <Loader size="md" />
       ) : data ? (
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        data.data.map((unit: any) => (
+        data.map((unit: any) => (
           <CollectorUnitTile
             key={unit.id}
             id={unit.id}

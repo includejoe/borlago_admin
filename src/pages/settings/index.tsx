@@ -10,7 +10,7 @@ import LightAvatar from "../../assets/images/avatar_light.png";
 import ChangePasswordModal from "@components/modals/changePasswordModal";
 import { Button } from "@components/button";
 import TextInput from "@components/inputs/textInput";
-import GenderInput from "@components/inputs/genderInput";
+import SelectInput from "@/src/components/inputs/selectInput";
 import { useAuthContext } from "@contexts/authContext";
 import { useTheme } from "@utils/theme";
 import { imageHandler } from "@utils/imageHandler";
@@ -47,6 +47,12 @@ const SettingsPage = () => {
       console.log(values);
     },
   });
+
+  const genderChoices = [
+    t("gender.male"),
+    t("gender.female"),
+    t("gender.other"),
+  ];
 
   return (
     <>
@@ -184,9 +190,12 @@ const SettingsPage = () => {
             background={theme.color.backgroundVariant}
             value={user?.gender as string}
           />
-          <GenderInput
+          <SelectInput
             width={isScreenMobile ? "100%" : "49%"}
             label={t("page.settings.gender") as string}
+            id="gender"
+            options={genderChoices}
+            placeholder={t("gender.choose")}
             background={theme.color.white}
             value={formik.values.gender}
             onChange={formik.handleChange}

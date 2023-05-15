@@ -1,54 +1,57 @@
-import { useTranslation } from "react-i18next";
-
 import { InputArea, SelectField } from "./styles";
 
-interface GenderInputProps {
+interface SelectInputProps {
   label?: string;
   value: string;
+  id: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  options: any[];
   error?: string;
   width?: string;
   height?: string;
   background?: string;
+  placeholder: string;
   isError?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLSelectElement>) => void;
 }
 
-const GenderInput: React.FC<GenderInputProps> = ({
+const SelectInput: React.FC<SelectInputProps> = ({
   width,
   height,
+  id,
   background,
+  placeholder,
+  options,
   label,
   value,
   error,
   onChange,
-  onBlur,
   isError,
 }) => {
-  const { t } = useTranslation();
-
   return (
     <InputArea width={width}>
-      <label htmlFor="gender">{label ? label : null}</label>
+      <label htmlFor={value}>{label ? label : null}</label>
       <SelectField
         height={height}
         background={background}
-        id="gender"
-        name="gender"
+        id={id}
+        name={id}
         value={value}
         onChange={onChange}
-        onBlur={onBlur}
       >
         <option value="" disabled hidden>
-          {t("gender.choose")}
+          {placeholder}
         </option>
-        <option value="Male">{t("gender.male")}</option>
-        <option value="Female">{t("gender.female")}</option>
-        <option value="Other">{t("gender.other")}</option>
+        {options.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
       </SelectField>
       {isError ? <p>{error}</p> : null}
     </InputArea>
   );
 };
 
-export default GenderInput;
+export default SelectInput;
