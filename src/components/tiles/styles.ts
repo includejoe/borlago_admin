@@ -38,3 +38,18 @@ export const Wrapper = styled(Link)`
     }
   }
 `;
+
+interface WCRStatusProps {
+  status: number;
+}
+
+export const WCRStatus = styled.span<WCRStatusProps>`
+  color: ${({ status, theme }) =>
+    status === 1
+      ? theme.fontColor.secondary
+      : status === 2
+      ? "#f76d31"
+      : status === 3
+      ? theme.color.success
+      : theme.color.error};
+`;

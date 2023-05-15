@@ -90,7 +90,7 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/wcr/"
+            path="/wcrs/"
             element={
               <DashboardLayout>
                 <WasteCollectionRequestsPage />

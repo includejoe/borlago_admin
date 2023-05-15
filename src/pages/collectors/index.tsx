@@ -5,8 +5,7 @@ import borlagoapi from "@/src/api";
 import { useAuthContext } from "@contexts/authContext";
 import Loader from "@components/loader";
 import CollectorTile from "@components/tiles/collectorTile";
-import { Heading } from "@src/commonStyles";
-import { PageContainer } from "@layouts/dashboardLayout/styles";
+import { Heading, PageContainer } from "@src/commonStyles";
 
 const CollectorsPage = () => {
   const { t } = useTranslation();

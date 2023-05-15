@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { PageContainer } from "@layouts/dashboardLayout/styles";
+import { PageContainer } from "@src/commonStyles";
 
 const CollectorUnitDetailPage = () => {
   const { t } = useTranslation();

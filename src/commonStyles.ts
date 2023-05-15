@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const PageContainer = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
+    padding: 15px;
+  }
+`;
+
 export const Heading = styled.div`
   width: 100%;
   height: 50px;

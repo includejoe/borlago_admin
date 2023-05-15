@@ -16,22 +16,22 @@ const HomeCard: React.FC<HomeCardProps> = ({ type, to }) => {
       {type === 1 ? (
         <>
           <MdCreate className="icon" />
-          <h2>{t("homeCard.create")}</h2>
+          <h2>{t("page.home.create")}</h2>
         </>
       ) : type === 2 ? (
         <>
           <MdAdd className="icon" />
-          <h2>{t("homeCard.add")}</h2>
+          <h2>{t("page.home.add")}</h2>
         </>
       ) : type === 3 ? (
         <>
           <MdEditDocument className="icon" />
-          <h2>{t("homeCard.edit")}</h2>
+          <h2>{t("page.home.edit")}</h2>
         </>
       ) : (
         <>
           <MdSearch className="icon" />
-          <h2>{t("homeCard.get")}</h2>
+          <h2>{t("page.home.get")}</h2>
         </>
       )}
     </CardWrapper>

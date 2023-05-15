@@ -54,7 +54,7 @@ const SideBar = () => {
           </li>
 
           <li>
-            <Link to="/wcr/">
+            <Link to="/wcrs/">
               <IoMdTrash className="icon" />
               {t("sideBar.wcr")}
             </Link>

@@ -15,20 +15,18 @@
     "hi": "Hi, {{name}}"
   },
 
-  "homeCard": {
-    "create": "CREATE COLLECTOR UNIT",
-    "add": "ADD COLLECTOR TO UNIT",
-    "edit": "EDIT COLLECTOR UNIT",
-    "get": "GET COLLECTOR UNIT"
-  },
-
   "page": {
     "login": {
       "forgotPassword": "Forgot your password?",
       "welcome": "Welcome back!",
       "login": "Please login to continue"
     },
-    "home": {},
+    "home": {
+      "create": "CREATE COLLECTOR UNIT",
+      "add": "ADD COLLECTOR TO UNIT",
+      "edit": "EDIT COLLECTOR UNIT",
+      "get": "GET COLLECTOR UNIT"
+    },
     "collectors": {
       "name": "NAME",
       "gender": "GENDER",
@@ -44,7 +42,11 @@
       "type": "TYPE",
       "location": "LOCATION",
       "status": "STATUS",
-      "createdAt": "CREATED AT"
+      "createdAt": "CREATED AT",
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "canceled": "Canceled"
     },
     "settings": {
       "firstName": "New First Name",
