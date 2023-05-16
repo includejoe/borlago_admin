@@ -11,7 +11,7 @@ import CollectorUnitTile from "@components/tiles/collectorUnitTile";
 import Loader from "@components/loader";
 import { Heading, PageContainer } from "@src/commonStyles";
 import { CreateCollectorUnit } from "./styles";
-import UnitFilter from "@components/unitFilter";
+import UnitFilter from "@/src/components/filters/unitFilter";
 
 const CollectorUnitsPage = () => {
   const { t } = useTranslation();
@@ -55,9 +55,7 @@ const CollectorUnitsPage = () => {
             available={unit.available}
           />
         ))
-      ) : (
-        <h1>{t("error.wrong")}</h1>
-      )}
+      ) : null}
 
       <CreateCollectorUnit
         data-tooltip-id="tt-create-unit"

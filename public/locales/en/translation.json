@@ -35,8 +35,8 @@
       "search": "Search Collector Name",
       "filter": "FIlter Collector Units",
       "status": "Status",
-      "regions": "Regions",
-      "countries": "Countries"
+      "s_region": "Region",
+      "s_country": "Country"
     },
     "wasteCollectionRequests": {
       "type": "TYPE",

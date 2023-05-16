@@ -18,7 +18,7 @@ import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetail";
 import SettingsPage from "@pages/settings";
 
-// TODO: collector unit header filter
+// TODO: re-edit response dialogue
 // TODO: create collector unit page
 // TODO: save profile image to storage bucket
 // TODO: make update user details request
