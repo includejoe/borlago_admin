@@ -63,6 +63,11 @@ export const FormWrapper = styled.form`
   justify-content: center;
   position: relative;
 
+  h1 {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
     width: 90%;
   }

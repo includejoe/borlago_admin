@@ -16,6 +16,17 @@ const TopBar = () => {
     toggleSideBar();
   };
 
+  const currentTime: Date = new Date();
+  const currentHour: number = currentTime.getHours();
+  let greeting;
+  if (currentHour >= 0 && currentHour < 12) {
+    greeting = t("topBar.goodMorning", { name: user?.first_name });
+  } else if (currentHour >= 12 && currentHour < 18) {
+    greeting = t("topBar.goodAfternoon", { name: user?.first_name });
+  } else {
+    greeting = t("topBar.goodEvening", { name: user?.first_name });
+  }
+
   return (
     <TopBarWrapper>
       <Left>
@@ -28,7 +39,7 @@ const TopBar = () => {
       </Left>
       <Middle></Middle>
       <Right>
-        <span>{t("topBar.hi", { name: user?.first_name })}</span>
+        <span>{greeting}</span>
         <Avatar />
         <ToggleTheme />
       </Right>

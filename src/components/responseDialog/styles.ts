@@ -2,24 +2,19 @@ import styled from "styled-components";
 
 interface WrapperProps {
   show: boolean;
-  error: boolean;
 }
 
 export const Wrapper = styled.div<WrapperProps>`
   width: 500px;
   display: flex;
   align-items: center;
-  background-color: ${({ theme, error }) =>
-    error ? theme.color.errorVariant : theme.color.successVariant};
-  border: ${({ theme, error }) =>
-    error
-      ? `1px solid ${theme.color.error}`
-      : `1px solid ${theme.color.success}`};
+  background-color: ${({ theme }) => theme.color.backgroundVariant};
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   z-index: 99;
   padding: 10px;
   position: fixed;
-  color: #fff;
+  color: ${({ theme }) => theme.fontColor.primary};
   bottom: 20px;
   left: ${({ show }) => (show ? "40px" : "-1000px")};
   transition: all 200ms ease-in-out;
@@ -39,5 +34,6 @@ export const Wrapper = styled.div<WrapperProps>`
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.lg}) {
     width: 300px;
+    font-size: 13px;
   }
 `;

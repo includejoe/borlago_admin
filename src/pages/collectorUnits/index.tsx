@@ -12,11 +12,14 @@ import Loader from "@components/loader";
 import { Heading, PageContainer } from "@src/commonStyles";
 import { CreateCollectorUnit } from "./styles";
 import UnitFilter from "@/src/components/filters/unitFilter";
+import CreateCollectorUnitModal from "@/src/components/modals/createCollectorUnitModal";
+import { CollectorUnit } from "@/src/types/collectorUnit";
 
 const CollectorUnitsPage = () => {
   const { t } = useTranslation();
   const { token } = useAuthContext();
-  const [data, setData] = useState([]);
+  const [showCreateModal, setShowCreateModal] = useState(false);
+  const [data, setData] = useState<CollectorUnit[]>([]);
 
   const { isLoading } = useQuery("collector-units", async () => {
     const { data } = await borlagoapi.get(
@@ -33,6 +36,13 @@ const CollectorUnitsPage = () => {
 
   return (
     <PageContainer>
+      {showCreateModal ? (
+        <CreateCollectorUnitModal
+          show={showCreateModal}
+          setUnits={setData}
+          setShowModal={setShowCreateModal}
+        />
+      ) : null}
       <UnitFilter setUnits={setData} />
 
       <Heading>
@@ -59,8 +69,8 @@ const CollectorUnitsPage = () => {
 
       <CreateCollectorUnit
         data-tooltip-id="tt-create-unit"
-        data-tooltip-content={t("page.collectorUnits.createUnit") as string}
-        to="/create-unit/"
+        data-tooltip-content={t("page.collectorUnits.create") as string}
+        onClick={() => setShowCreateModal(true)}
       >
         <MdCreate className="icon" />
       </CreateCollectorUnit>

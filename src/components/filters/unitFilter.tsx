@@ -10,13 +10,14 @@ import { Button } from "@components/button";
 import TextInput from "@components/inputs/textInput";
 import SelectInput from "../inputs/selectInput";
 import { useAuthContext } from "@contexts/authContext";
-import { status, regions, countries } from "@utils/filterProperties";
+import { countries, Country } from "@/src/utils/countries";
 import { useTheme } from "@utils/theme";
 import { Properties, Wrapper, Header } from "./styles";
 import Loader from "../loader";
+import { CollectorUnit } from "@/src/types/collectorUnit";
 
 interface UnitFilterProps {
-  setUnits: React.Dispatch<SetStateAction<Array<never>>>;
+  setUnits: React.Dispatch<SetStateAction<Array<CollectorUnit>>>;
 }
 
 interface FilterData {
@@ -32,6 +33,8 @@ const UnitFilter: React.FC<UnitFilterProps> = ({ setUnits }) => {
   const { token } = useAuthContext();
   const [showProperties, setShowProperties] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [regions, setRegions] = useState<string[]>([]);
+  const countryNames = countries.map((country) => country.country);
   const isScreenMobile = useMediaQuery({
     query: `(max-width: ${theme.breakPoint.lg})`,
   });
@@ -73,6 +76,19 @@ const UnitFilter: React.FC<UnitFilterProps> = ({ setUnits }) => {
     },
   });
 
+  const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const country = event.target.value;
+    const selectedCountryData = countries.find(
+      (c: Country) => c.country === country
+    );
+
+    if (selectedCountryData) {
+      formik.setFieldValue("country", country);
+      formik.setFieldValue("region", "");
+      setRegions(selectedCountryData.regions);
+    }
+  };
+
   return (
     <Wrapper>
       <Header onClick={() => setShowProperties(!showProperties)}>
@@ -100,9 +116,19 @@ const UnitFilter: React.FC<UnitFilterProps> = ({ setUnits }) => {
               height="40px"
               id="status"
               placeholder={t("page.collectorUnits.status") as string}
-              options={status}
+              options={["Available", "Not Available"]}
               value={formik.values.status}
               onChange={formik.handleChange}
+            />
+
+            <SelectInput
+              width={isScreenMobile ? "100%" : "20%"}
+              height="40px"
+              id="country"
+              placeholder={t("page.collectorUnits.s_country") as string}
+              options={countryNames}
+              value={formik.values.country}
+              onChange={handleCountryChange}
             />
 
             <SelectInput
@@ -112,16 +138,6 @@ const UnitFilter: React.FC<UnitFilterProps> = ({ setUnits }) => {
               placeholder={t("page.collectorUnits.s_region") as string}
               options={regions}
               value={formik.values.region}
-              onChange={formik.handleChange}
-            />
-
-            <SelectInput
-              width={isScreenMobile ? "100%" : "20%"}
-              height="40px"
-              id="country"
-              placeholder={t("page.collectorUnits.s_country") as string}
-              options={countries}
-              value={formik.values.country}
               onChange={formik.handleChange}
             />
           </Properties>

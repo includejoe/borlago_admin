@@ -9,7 +9,6 @@ import DashboardLayout from "@layouts/dashboardLayout";
 
 // pages
 import LoginPage from "@pages/login";
-import CreateCollectorUnitPage from "@pages/createCollectorUnit";
 import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
@@ -19,8 +18,8 @@ import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetai
 import SettingsPage from "@pages/settings";
 
 // TODO: re-edit response dialogue
-// TODO: create collector unit page
-// TODO: save profile image to storage bucket
+// TODO: + create collector unit page
+// TODO: save profile image to supabase storage bucket
 // TODO: make update user details request
 // TODO: + all detail pages
 // TODO: + back button to all detail pages
@@ -39,15 +38,6 @@ const App: React.FC = () => {
               <AuthRoute checkAuthenticated={false}>
                 <LoginPage />
               </AuthRoute>
-            }
-          />
-
-          <Route
-            path="/create-unit/"
-            element={
-              <DashboardLayout>
-                <CreateCollectorUnitPage />
-              </DashboardLayout>
             }
           />
 

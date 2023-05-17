@@ -11,7 +11,9 @@
   },
 
   "topBar": {
-    "hi": "Hi, {{name}}"
+    "goodMorning": "Good morning, {{name}}",
+    "goodAfternoon": "Good afternoon, {{name}}",
+    "goodEvening": "Good evening, {{name}}"
   },
 
   "page": {
@@ -31,7 +33,7 @@
       "country": "COUNTRY",
       "region": "REGION",
       "available": "AVAILABLE",
-      "createUnit": "Create Collector Unit",
+      "create": "Create Collector Unit",
       "search": "Search Collector Name",
       "filter": "FIlter Collector Units",
       "status": "Status",
@@ -70,7 +72,8 @@
     "no": "No",
     "save": "Save",
     "submit": "Submit",
-    "filter": "Filter"
+    "filter": "Filter",
+    "create": "Create"
   },
 
   "error": {
@@ -83,7 +86,8 @@
   },
 
   "success": {
-    "passwordChange": "Password has been changed successfully"
+    "passwordChange": "Password has been changed successfully",
+    "collectorUnit": "Collector unit created successfully"
   },
 
   "placeholder": {

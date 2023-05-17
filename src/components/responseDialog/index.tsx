@@ -27,11 +27,7 @@ const ResponseDialog: React.FC<ResponseDialogProps> = ({
     </>
   );
 
-  return (
-    <Wrapper show={show} error={type === "error"}>
-      {type === "error" ? error : success}
-    </Wrapper>
-  );
+  return <Wrapper show={show}>{type === "error" ? error : success}</Wrapper>;
 };
 
 export default ResponseDialog;
