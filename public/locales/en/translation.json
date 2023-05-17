@@ -23,10 +23,9 @@
       "login": "Please login to continue"
     },
     "collectors": {
-      "name": "NAME",
-      "gender": "GENDER",
-      "unit": "UNIT",
-      "none": "None"
+      "firstName": "FIRST NAME",
+      "lastName": "LAST NAME",
+      "gender": "GENDER"
     },
     "collectorUnits": {
       "name": "NAME",
@@ -39,6 +38,13 @@
       "status": "Status",
       "s_region": "Region",
       "s_country": "Country"
+    },
+    "collectorUnitDetail": {
+      "status": "Status",
+      "country": "Country",
+      "region": "Region",
+      "location": "Current Location",
+      "collectors": "Collectors"
     },
     "wasteCollectionRequests": {
       "type": "TYPE",
@@ -73,7 +79,8 @@
     "save": "Save",
     "submit": "Submit",
     "filter": "Filter",
-    "create": "Create"
+    "create": "Create",
+    "editCollectors": "Edit Collectors"
   },
 
   "error": {
