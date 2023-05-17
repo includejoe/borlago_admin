@@ -39,7 +39,6 @@ const CollectorUnitsPage = () => {
       {showCreateModal ? (
         <CreateCollectorUnitModal
           show={showCreateModal}
-          setUnits={setData}
           setShowModal={setShowCreateModal}
         />
       ) : null}

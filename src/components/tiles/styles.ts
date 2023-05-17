@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Wrapper = styled(Link)`
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +31,11 @@ export const Wrapper = styled(Link)`
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {
-    height: 40px;
+    min-height: 40px;
+
+    span:last-of-type {
+      text-align: center;
+    }
 
     span {
       font-size: 12px;

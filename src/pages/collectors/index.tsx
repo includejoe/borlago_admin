@@ -40,7 +40,7 @@ const CollectorsPage = () => {
             lastName={collector.last_name}
             gender={collector.gender}
             profilePhoto={collector.profile_photo}
-            unitName={collector.collector_unit.name}
+            unitName={collector?.collector_unit?.name}
           />
         ))
       ) : (

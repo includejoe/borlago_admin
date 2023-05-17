@@ -16,20 +16,34 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.lg}) {
+    padding: 10px;
+  }
 `;
 
 export const Header = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   .icon {
     font-size: 25px;
     margin-right: 10px;
   }
 
-  cursor: pointer;
   h1 {
     font-size: 17px;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.lg}) {
+    h1 {
+      font-size: 15px;
+    }
+
+    .icon {
+      font-size: 23px;
+    }
   }
 `;
 

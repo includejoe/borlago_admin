@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import Avatar from "@components/avatar";
 import { useMediaQuery } from "react-responsive";
 import { useTheme } from "@utils/theme";
@@ -9,7 +11,7 @@ interface CollectorTileProps {
   lastName: string;
   gender: string;
   profilePhoto?: string;
-  unitName: boolean;
+  unitName?: string;
 }
 
 const CollectorTile: React.FC<CollectorTileProps> = ({
@@ -21,6 +23,7 @@ const CollectorTile: React.FC<CollectorTileProps> = ({
   unitName,
 }) => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const isScreenMobile = useMediaQuery({
     query: `(max-width: ${theme.breakPoint.lg})`,
   });
@@ -29,7 +32,19 @@ const CollectorTile: React.FC<CollectorTileProps> = ({
     <Wrapper to={`/collector/${id}/`}>
       <span id="name">{firstName + " " + lastName}</span>
       <span>{gender}</span>
-      <span>{unitName}</span>
+      <span>
+        {unitName ? (
+          unitName
+        ) : (
+          <span
+            style={{
+              color: theme.fontColor.secondary,
+            }}
+          >
+            {t("page.collectors.none")}
+          </span>
+        )}
+      </span>
       <span
         style={{
           display: "flex",

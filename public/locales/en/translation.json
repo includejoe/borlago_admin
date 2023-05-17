@@ -22,11 +22,11 @@
       "welcome": "Welcome back!",
       "login": "Please login to continue"
     },
-    "createCollectorUnit": {},
     "collectors": {
       "name": "NAME",
       "gender": "GENDER",
-      "unit": "UNIT"
+      "unit": "UNIT",
+      "none": "None"
     },
     "collectorUnits": {
       "name": "NAME",

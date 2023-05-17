@@ -2,12 +2,12 @@
 import { useRef, SetStateAction, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useMediaQuery } from "react-responsive";
 
 import borlagoapi from "@src/api";
 import Loader from "@components/loader";
-import { CollectorUnit } from "@/src/types/collectorUnit";
 import ResponseDialog from "@components/responseDialog";
 import SelectInput from "@components/inputs/selectInput";
 import { Button } from "@components/button";
@@ -18,37 +18,33 @@ import { ModalContainer, FormWrapper as ModalWrapper } from "./styles";
 
 interface CreateCollectorUnitModalProps {
   show: boolean;
-  setUnits: React.Dispatch<SetStateAction<Array<CollectorUnit>>>;
   setShowModal: React.Dispatch<SetStateAction<boolean>>;
 }
 
 const CreateCollectorUnitModal: React.FC<CreateCollectorUnitModalProps> = ({
   show,
-  setUnits,
   setShowModal,
 }) => {
   const { t } = useTranslation();
   const theme = useTheme();
   const { token } = useAuthContext();
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [regions, setRegions] = useState<string[]>([]);
   const countryNames = countries.map((country) => country.country);
-  const [submissionStatus, setSubmissionStatus] = useState({
-    error: false,
-    success: false,
-  });
   const isScreenMobile = useMediaQuery({
     query: `(max-width: ${theme.breakPoint.lg})`,
   });
 
   useEffect(() => {
     setTimeout(() => {
-      setSubmissionStatus({ error: false, success: false });
+      setError(false);
     }, 3000);
-  }, [submissionStatus.error, submissionStatus.success]);
+  }, [error]);
 
-  async function handleSubmit(values: any, resetForm: () => void) {
+  async function handleSubmit(values: any) {
     return borlagoapi
       .post("/administrator/collector-unit/create/", values, {
         headers: {
@@ -58,12 +54,11 @@ const CreateCollectorUnitModal: React.FC<CreateCollectorUnitModalProps> = ({
       })
       .then(({ data }) => {
         setShowModal(false);
-        resetForm();
-        setUnits((prevState: CollectorUnit[]) => [data, ...prevState]);
+        navigate(`/unit/${data.id}`);
         setIsLoading(false);
       })
       .catch(() => {
-        setSubmissionStatus({ error: true, success: false });
+        setError(true);
         setIsLoading(false);
       });
   }
@@ -77,9 +72,9 @@ const CreateCollectorUnitModal: React.FC<CreateCollectorUnitModalProps> = ({
       country: Yup.string().required(t("error.required") as string),
       region: Yup.string().required(t("error.required") as string),
     }),
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: (values) => {
       setIsLoading(true);
-      handleSubmit(values, resetForm);
+      handleSubmit(values);
     },
   });
 
@@ -104,13 +99,7 @@ const CreateCollectorUnitModal: React.FC<CreateCollectorUnitModalProps> = ({
 
   return show ? (
     <ModalContainer ref={ref} onClick={closeModal}>
-      <ResponseDialog
-        show={submissionStatus.error || submissionStatus.success}
-        type={submissionStatus.error ? "error" : "success"}
-        message={
-          submissionStatus.error ? t("error.wrong") : t("success.collectorUnit")
-        }
-      />
+      <ResponseDialog show={error} type="error" message={t("error.wrong")} />
       <ModalWrapper onSubmit={formik.handleSubmit}>
         {isLoading ? (
           <Loader size="md" />

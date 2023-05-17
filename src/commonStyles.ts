@@ -35,5 +35,9 @@ export const Heading = styled.div`
     span {
       font-size: 12px;
     }
+
+    span:last-of-type {
+      text-align: center;
+    }
   }
 `;

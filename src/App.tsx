@@ -17,12 +17,9 @@ import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetail";
 import SettingsPage from "@pages/settings";
 
-// TODO: re-edit response dialogue
-// TODO: + create collector unit page
+// TODO: + collector unit detail page
 // TODO: save profile image to supabase storage bucket
 // TODO: make update user details request
-// TODO: + all detail pages
-// TODO: + back button to all detail pages
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
