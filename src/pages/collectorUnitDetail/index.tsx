@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 
+import GoogleMap from "@components/googleMap";
 import CollectorTile from "@components/tiles/collectorTile";
 import borlagoapi from "@/src/api";
 import { useAuthContext } from "@contexts/authContext";
@@ -15,7 +16,7 @@ import {
   Name,
   Detail,
   CurrentLocation,
-  Map,
+  MapContainer,
   Collectors,
 } from "./styles";
 import { User } from "@/src/types/user";
@@ -69,7 +70,13 @@ const CollectorUnitDetailPage = () => {
           <div className="main">
             <CurrentLocation>
               <p>{t("page.collectorUnitDetail.location")}</p>
-              <Map></Map>
+              <MapContainer>
+                <GoogleMap
+                  country={data.country}
+                  latitude={data.latitude}
+                  longitude={data.longitude}
+                />
+              </MapContainer>
             </CurrentLocation>
 
             {data.collectors.map((collector: User) => (

@@ -1,11 +1,15 @@
 export interface Country {
   country: string;
+  latitude: number;
+  longitude: number;
   regions: string[];
 }
 
 export const countries: Country[] = [
   {
     country: "Benin",
+    latitude: 9.3077,
+    longitude: 2.3158,
     regions: [
       "Alibori",
       "Atakora",
@@ -23,6 +27,8 @@ export const countries: Country[] = [
   },
   {
     country: "Burkina Faso",
+    latitude: 12.2383,
+    longitude: -1.5616,
     regions: [
       "Boucle du Mouhoun",
       "Cascades",
@@ -41,10 +47,14 @@ export const countries: Country[] = [
   },
   {
     country: "Cape Verde",
+    latitude: 16.5388,
+    longitude: -23.0418,
     regions: ["Barlavento Islands", "Sotavento Islands"],
   },
   {
     country: "Gambia",
+    latitude: 13.4432,
+    longitude: -15.3101,
     regions: [
       "Banjul",
       "Central River",
@@ -56,6 +66,8 @@ export const countries: Country[] = [
   },
   {
     country: "Ghana",
+    latitude: 7.9465,
+    longitude: -1.0232,
     regions: [
       "Ashanti",
       "Brong-Ahafo",
@@ -77,6 +89,8 @@ export const countries: Country[] = [
   },
   {
     country: "Guinea",
+    latitude: 9.9456,
+    longitude: -9.6966,
     regions: [
       "Boke",
       "Conakry",
@@ -90,6 +104,8 @@ export const countries: Country[] = [
   },
   {
     country: "Guinea-Bissau",
+    latitude: 11.8037,
+    longitude: -15.1804,
     regions: [
       "Bafata",
       "Biombo",
@@ -104,6 +120,8 @@ export const countries: Country[] = [
   },
   {
     country: "Ivory Coast",
+    latitude: 7.54,
+    longitude: -5.5471,
     regions: [
       "Agnéby",
       "Bafing",
@@ -122,6 +140,8 @@ export const countries: Country[] = [
   },
   {
     country: "Liberia",
+    latitude: 6.4281,
+    longitude: -9.4295,
     regions: [
       "Bomi",
       "Bong",
@@ -142,6 +162,8 @@ export const countries: Country[] = [
   },
   {
     country: "Mali",
+    latitude: 17.5707,
+    longitude: -3.9962,
     regions: [
       "Bamako",
       "Gao",
@@ -156,6 +178,8 @@ export const countries: Country[] = [
   },
   {
     country: "Mauritania",
+    latitude: 21.0079,
+    longitude: -10.9408,
     regions: [
       "Adrar",
       "Assaba",
@@ -174,6 +198,8 @@ export const countries: Country[] = [
   },
   {
     country: "Niger",
+    latitude: 17.6078,
+    longitude: 8.0817,
     regions: [
       "Agadez",
       "Diffa",
@@ -187,6 +213,8 @@ export const countries: Country[] = [
   },
   {
     country: "Nigeria",
+    latitude: 9.082,
+    longitude: 8.6753,
     regions: [
       "Abia",
       "Adamawa",
@@ -229,6 +257,8 @@ export const countries: Country[] = [
   },
   {
     country: "Senegal",
+    latitude: 14.7167,
+    longitude: -17.4677,
     regions: [
       "Dakar",
       "Diourbel",
@@ -248,10 +278,14 @@ export const countries: Country[] = [
   },
   {
     country: "Sierra Leone",
+    latitude: 8.4656,
+    longitude: -13.2317,
     regions: ["Eastern", "Northern", "Southern", "Western"],
   },
   {
     country: "Togo",
+    latitude: 8.6195,
+    longitude: 0.8248,
     regions: ["Centrale", "Kara", "Maritime", "Plateaux", "Savanes"],
   },
 ];

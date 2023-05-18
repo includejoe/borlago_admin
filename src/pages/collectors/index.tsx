@@ -14,7 +14,7 @@ const CollectorsPage = () => {
   const { token } = useAuthContext();
   const [data, setData] = useState<any>(null);
 
-  const { isLoading } = useQuery("collector-units", async () => {
+  const { isLoading, error } = useQuery("collector-units", async () => {
     const { data } = await borlagoapi.get("/administrator/collector/all/", {
       headers: {
         "Content-Type": "application/json",
@@ -47,9 +47,9 @@ const CollectorsPage = () => {
             unitName={collector?.collector_unit?.name}
           />
         ))
-      ) : (
+      ) : error ? (
         <h1>{t("error.wrong")}</h1>
-      )}
+      ) : null}
     </PageContainer>
   );
 };
