@@ -14,9 +14,9 @@ const AuthRoute: React.FC<AuthRouteProps> = ({
   const { token } = useAuthContext();
 
   if (checkAuthenticated) {
-    return token ? <>{children}</> : <Navigate to="/login" />;
+    return token ? <>{children}</> : <Navigate to="/" />;
   } else {
-    return token ? <Navigate to="/" /> : <>{children}</>;
+    return token ? <Navigate to="/collectors/" /> : <>{children}</>;
   }
 };
 

@@ -9,19 +9,20 @@ import DashboardLayout from "@layouts/dashboardLayout";
 
 // pages
 import LoginPage from "@pages/login";
-import HomePage from "@pages/home";
+import ChatsPage from "@pages/chats";
 import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
+import CollectorDetailPage from "@pages/collectorDetail";
 import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
+import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetail";
 import SettingsPage from "@pages/settings";
 
-// TODO: collector unit header filter
-// TODO: create collector unit page
-// TODO: add back button to all detail pages
-// TODO: collector unit detail page
-// TODO: collectors page
-// TODO: collector detail page
+// TODO: Add Collector to Unit Modal
+// TODO: fix multiple google map instances (Loading...)
+// TODO: put Marker on google map
+// TODO: save profile image to supabase storage bucket
+// TODO: make update user details request
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
@@ -32,20 +33,11 @@ const App: React.FC = () => {
       <SideBarContextProvider>
         <Routes>
           <Route
-            path="/login/"
+            path="/"
             element={
               <AuthRoute checkAuthenticated={false}>
                 <LoginPage />
               </AuthRoute>
-            }
-          />
-
-          <Route
-            path="/"
-            element={
-              <DashboardLayout>
-                <HomePage />
-              </DashboardLayout>
             }
           />
 
@@ -59,7 +51,7 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/collector-units/"
+            path="/units/"
             element={
               <DashboardLayout>
                 <CollectorUnitsPage />
@@ -68,7 +60,16 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/collector-unit-detail/:id/"
+            path="/collector/:id/"
+            element={
+              <DashboardLayout>
+                <CollectorDetailPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/unit/:id/"
             element={
               <DashboardLayout>
                 <CollectorUnitDetailPage />
@@ -77,10 +78,28 @@ const App: React.FC = () => {
           />
 
           <Route
-            path="/waste-collection-requests/"
+            path="/wcrs/"
             element={
               <DashboardLayout>
                 <WasteCollectionRequestsPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/chats/"
+            element={
+              <DashboardLayout>
+                <ChatsPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/wcr/:id/"
+            element={
+              <DashboardLayout>
+                <WasteCollectionRequestDetailPage />
               </DashboardLayout>
             }
           />

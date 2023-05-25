@@ -21,7 +21,7 @@ const Avatar: React.FC<AvatarProps> = ({ imgUrl, size }) => {
       {getImgUrl(imgUrl) ? (
         <img src={imgUrl} loading="lazy" alt="" />
       ) : (
-        <MdAccountCircle className="default" />
+        <MdAccountCircle size={size ? size : null} className="default" />
       )}
     </Wrapper>
   );

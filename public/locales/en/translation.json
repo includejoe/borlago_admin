@@ -2,24 +2,19 @@
   "appName": "BorlaGo Administrator",
 
   "sideBar": {
-    "home": "Home",
     "collectors": "Collectors",
     "collectorUnits": "Collector Units",
     "wcr": "Waste Collection Requests",
-    "settings": "Settings",
+    "settings": "Account Settings",
+    "chat": "Chats",
     "logout": "Log Out",
     "confirmLogout": "Are you sure you want to log out ?"
   },
 
   "topBar": {
-    "hi": "Hi, {{name}}"
-  },
-
-  "homeCard": {
-    "create": "CREATE COLLECTOR UNIT",
-    "add": "ADD COLLECTOR TO UNIT",
-    "edit": "EDIT COLLECTOR UNIT",
-    "get": "GET COLLECTOR UNIT"
+    "goodMorning": "Good morning, {{name}}",
+    "goodAfternoon": "Good afternoon, {{name}}",
+    "goodEvening": "Good evening, {{name}}"
   },
 
   "page": {
@@ -28,36 +23,106 @@
       "welcome": "Welcome back!",
       "login": "Please login to continue"
     },
-    "home": {},
-    "collectors": {},
-    "collectorUnits": {
-      "available": "Available",
-      "notAvailable": "Not Available"
+    "collectors": {
+      "collectorId": "COLLECTOR ID",
+      "name": "NAME",
+      "gender": "GENDER"
     },
-    "settings": {}
+    "collectorUnits": {
+      "name": "NAME",
+      "country": "COUNTRY",
+      "region": "REGION",
+      "available": "AVAILABLE",
+      "create": "Create Collector Unit",
+      "search": "Search Collector Name",
+      "filter": "FIlter Collector Units",
+      "status": "Status",
+      "s_region": "Region",
+      "s_country": "Country"
+    },
+    "collectorUnitDetail": {
+      "status": "Status",
+      "country": "Country",
+      "region": "Region",
+      "location": "Current Location",
+      "collectors": "Collectors",
+      "addCollector": "Add Collector to Unit ({{unitName}})",
+      "removeCollector": "Remove Collector from Unit ({{unitName}})",
+      "addInfo": "A unit can not contain more than 5 collectors. A collector that already belongs to this unit can not be added again. A collector that belongs to a different unit can not be added to this unit. Enter the ID of the collector to add collector to this unit.",
+      "removeInfo": "A collector that does not belong to this unit can not be removed from this unit. Enter the ID of the collector to remove collector from this unit."
+    },
+    "wasteCollectionRequests": {
+      "type": "TYPE",
+      "location": "LOCATION",
+      "status": "STATUS",
+      "createdAt": "CREATED AT",
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "canceled": "Canceled"
+    },
+    "settings": {
+      "firstName": "New First Name",
+      "lastName": "New Last Name",
+      "phone": "New Phone Number",
+      "gender": "New Gender",
+      "password": "Set New Password"
+    }
+  },
+
+  "gender": {
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "choose": "Choose"
   },
 
   "btn": {
     "login": "Log In",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "save": "Save",
+    "submit": "Submit",
+    "filter": "Filter",
+    "create": "Create",
+    "add": "Add",
+    "addCollector": "Add Collector",
+    "removeCollector": "Remove Collector"
   },
 
   "error": {
     "required": "Required*",
     "validEmail": "Must be a valid email address",
     "invalidCredentials": "Invalid Credentials",
-    "wrong": "Oops! Something went wrong :("
+    "match_password": "Passwords must match",
+    "wrong": "Sorry. Something went wrong",
+    "passwordChange": "Password could not be changed"
+  },
+
+  "success": {
+    "passwordChange": "Password has been changed successfully",
+    "collectorUnit": "Collector unit created successfully"
   },
 
   "placeholder": {
     "email": "Enter your email address",
-    "password": "Enter your password"
+    "password": "Enter your password",
+    "firstName": "Enter your new first name",
+    "lastName": "Enter your new last name",
+    "phone": "Enter your new phone number",
+    "collectorId": "Enter collector ID"
   },
 
   "label": {
     "email": "Email",
     "password": "Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "gender": "Gender",
     "stayLoggedIn": "Stay logged in"
   }
 }

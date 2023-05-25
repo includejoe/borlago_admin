@@ -86,7 +86,6 @@ const LoginPage = () => {
     <PageContainer>
       <ResponseDialog
         show={error}
-        setShow={setError}
         type="error"
         message={t("error.invalidCredentials")}
       />
@@ -102,8 +101,8 @@ const LoginPage = () => {
             id="email"
             name="email"
             type="email"
-            placeholder={t("placeholder.email")}
-            label={t("label.email")}
+            placeholder={t("placeholder.email") as string}
+            label={t("label.email") as string}
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -114,8 +113,8 @@ const LoginPage = () => {
           <PasswordInput
             id="password"
             name="password"
-            placeholder={t("placeholder.password")}
-            label={t("label.password")}
+            placeholder={t("placeholder.password") as string}
+            label={t("label.password") as string}
             value={formik.values.password}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}

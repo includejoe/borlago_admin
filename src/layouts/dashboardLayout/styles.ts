@@ -4,16 +4,6 @@ interface InnerContainerProps {
   isShowing: boolean;
 }
 
-export const PageContainer = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 25px;
-  transition: all 200ms ease-in-out;
-`;
-
 export const InnerContainer = styled.div<InnerContainerProps>`
   width: ${({ isShowing }) => (isShowing ? "80%" : "100%")};
   margin-left: ${({ isShowing }) => (isShowing ? "20%" : "0")};

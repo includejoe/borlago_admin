@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { IoMdTrash } from "react-icons/io";
-import {
-  MdHome,
-  MdLogout,
-  MdGroup,
-  MdPerson,
-  MdSettings,
-} from "react-icons/md";
+import { IoMdTrash, IoMdChatboxes } from "react-icons/io";
+import { MdLogout, MdGroup, MdPerson, MdSettings } from "react-icons/md";
 
 import ConfirmationModal from "@components/modals/confirmationModal";
 import { useAuthContext } from "@/src/contexts/authContext";
@@ -33,13 +27,6 @@ const SideBar = () => {
       <SideBarWrapper isShowing={isShowing}>
         <List>
           <li>
-            <Link to="/">
-              <MdHome className="icon" />
-              {t("sideBar.home")}
-            </Link>
-          </li>
-
-          <li>
             <Link to="/collectors/">
               <MdPerson className="icon" />
               {t("sideBar.collectors")}
@@ -47,16 +34,23 @@ const SideBar = () => {
           </li>
 
           <li>
-            <Link to="/collector-units/">
+            <Link to="/units/">
               <MdGroup className="icon" />
               {t("sideBar.collectorUnits")}
             </Link>
           </li>
 
           <li>
-            <Link to="/waste-collection-requests/">
+            <Link to="/wcrs/">
               <IoMdTrash className="icon" />
               {t("sideBar.wcr")}
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/chats/">
+              <IoMdChatboxes className="icon" />
+              {t("sideBar.chat")}
             </Link>
           </li>
 
