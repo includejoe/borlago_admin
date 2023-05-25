@@ -23,8 +23,8 @@
       "login": "Please login to continue"
     },
     "collectors": {
-      "firstName": "FIRST NAME",
-      "lastName": "LAST NAME",
+      "collectorId": "COLLECTOR ID",
+      "name": "NAME",
       "gender": "GENDER"
     },
     "collectorUnits": {

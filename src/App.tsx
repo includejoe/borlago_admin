@@ -17,7 +17,9 @@ import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetail";
 import SettingsPage from "@pages/settings";
 
-// TODO: + collector unit detail page
+// TODO: Add Collector to Unit Modal
+// TODO: fix multiple google map instances (Loading...)
+// TODO: put Marker on google map
 // TODO: save profile image to supabase storage bucket
 // TODO: make update user details request
 

@@ -19,7 +19,6 @@ import {
   MapContainer,
   Collectors,
 } from "./styles";
-import { User } from "@/src/types/user";
 
 const CollectorUnitDetailPage = () => {
   const { t } = useTranslation();
@@ -79,12 +78,12 @@ const CollectorUnitDetailPage = () => {
               </MapContainer>
             </CurrentLocation>
 
-            {data.collectors.map((collector: User) => (
+            {data.collectors.map((collector: any) => (
               <Collectors key={collector.id}>
                 <p>{t("page.collectorUnitDetail.collectors")}</p>
                 <Heading>
-                  <span>{t("page.collectors.firstName")}</span>
-                  <span>{t("page.collectors.lastName")}</span>
+                  <span>{t("page.collectors.collectorId")}</span>
+                  <span>{t("page.collectors.name")}</span>
                   <span>{t("page.collectors.gender")}</span>
                   <span></span>
                 </Heading>
@@ -92,6 +91,7 @@ const CollectorUnitDetailPage = () => {
                   id={collector.id}
                   firstName={collector.first_name}
                   lastName={collector.last_name}
+                  collectorId={collector.collector_id}
                   gender={collector.gender}
                   profilePhoto={collector.profile_photo}
                 />

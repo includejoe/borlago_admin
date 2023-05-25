@@ -27,8 +27,8 @@ const CollectorsPage = () => {
   return (
     <PageContainer>
       <Heading>
-        <span>{t("page.collectors.firstName")}</span>
-        <span>{t("page.collectors.lastName")}</span>
+        <span>{t("page.collectors.collectorId")}</span>
+        <span>{t("page.collectors.name")}</span>
         <span>{t("page.collectors.gender")}</span>
         <span></span>
       </Heading>
@@ -42,6 +42,7 @@ const CollectorsPage = () => {
             id={collector.id}
             firstName={collector.first_name}
             lastName={collector.last_name}
+            collectorId={collector?.collector_id}
             gender={collector.gender}
             profilePhoto={collector.profile_photo}
             unitName={collector?.collector_unit?.name}

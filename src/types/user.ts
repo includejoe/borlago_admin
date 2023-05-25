@@ -3,6 +3,7 @@ export type User = {
   email: string;
   first_name: string;
   last_name: string;
+  collector_id?: string;
   phone: string;
   momo_number?: string;
   gender: string;

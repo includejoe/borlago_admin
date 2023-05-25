@@ -17,7 +17,7 @@ export const Wrapper = styled(Link)`
     width: 25%;
   }
 
-  #name {
+  span:first-of-type {
     color: ${({ theme }) => theme.color.primary};
     font-weight: 600;
   }

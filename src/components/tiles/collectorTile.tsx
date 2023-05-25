@@ -7,6 +7,7 @@ interface CollectorTileProps {
   id: string;
   firstName: string;
   lastName: string;
+  collectorId: string;
   gender: string;
   profilePhoto?: string;
   unitName?: string;
@@ -14,6 +15,7 @@ interface CollectorTileProps {
 
 const CollectorTile: React.FC<CollectorTileProps> = ({
   id,
+  collectorId,
   firstName,
   lastName,
   profilePhoto,
@@ -26,8 +28,8 @@ const CollectorTile: React.FC<CollectorTileProps> = ({
 
   return (
     <Wrapper to={`/collector/${id}/`}>
-      <span>{firstName}</span>
-      <span>{lastName}</span>
+      <span>{collectorId}</span>
+      <span>{firstName + " " + lastName}</span>
       <span>{gender}</span>
       <span
         style={{
