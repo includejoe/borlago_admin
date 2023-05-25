@@ -64,8 +64,17 @@ export const FormWrapper = styled.form`
   position: relative;
 
   h1 {
+    width: 82%;
+    text-align: center;
     font-size: 17px;
     margin-bottom: 15px;
+  }
+
+  .info {
+    width: 82%;
+    margin: 25px 0;
+    text-align: center;
+    color: ${({ theme }) => theme.fontColor.secondary};
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.md}) {

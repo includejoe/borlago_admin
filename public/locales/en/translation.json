@@ -6,6 +6,7 @@
     "collectorUnits": "Collector Units",
     "wcr": "Waste Collection Requests",
     "settings": "Account Settings",
+    "chat": "Chats",
     "logout": "Log Out",
     "confirmLogout": "Are you sure you want to log out ?"
   },
@@ -44,7 +45,11 @@
       "country": "Country",
       "region": "Region",
       "location": "Current Location",
-      "collectors": "Collectors"
+      "collectors": "Collectors",
+      "addCollector": "Add Collector to Unit ({{unitName}})",
+      "removeCollector": "Remove Collector from Unit ({{unitName}})",
+      "addInfo": "A unit can not contain more than 5 collectors. A collector that already belongs to this unit can not be added again. A collector that belongs to a different unit can not be added to this unit. Enter the ID of the collector to add collector to this unit.",
+      "removeInfo": "A collector that does not belong to this unit can not be removed from this unit. Enter the ID of the collector to remove collector from this unit."
     },
     "wasteCollectionRequests": {
       "type": "TYPE",
@@ -80,7 +85,9 @@
     "submit": "Submit",
     "filter": "Filter",
     "create": "Create",
-    "editCollectors": "Edit Collectors"
+    "add": "Add",
+    "addCollector": "Add Collector",
+    "removeCollector": "Remove Collector"
   },
 
   "error": {
@@ -88,7 +95,7 @@
     "validEmail": "Must be a valid email address",
     "invalidCredentials": "Invalid Credentials",
     "match_password": "Passwords must match",
-    "wrong": "Oops! Something went wrong :(",
+    "wrong": "Sorry. Something went wrong",
     "passwordChange": "Password could not be changed"
   },
 
@@ -102,7 +109,8 @@
     "password": "Enter your password",
     "firstName": "Enter your new first name",
     "lastName": "Enter your new last name",
-    "phone": "Enter your new phone number"
+    "phone": "Enter your new phone number",
+    "collectorId": "Enter collector ID"
   },
 
   "label": {

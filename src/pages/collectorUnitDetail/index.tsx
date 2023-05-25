@@ -6,9 +6,11 @@ import { useQuery } from "react-query";
 
 import GoogleMap from "@components/googleMap";
 import CollectorTile from "@components/tiles/collectorTile";
+import AddOrRemoveCollectorModal from "@/src/components/modals/addOrRemoveCollectorModal";
 import borlagoapi from "@/src/api";
 import { useAuthContext } from "@contexts/authContext";
 import Loader from "@components/loader";
+import { useTheme } from "@utils/theme";
 import { Button } from "@/src/components/button";
 import { PageContainer, Heading } from "@src/commonStyles";
 import {
@@ -22,11 +24,16 @@ import {
 
 const CollectorUnitDetailPage = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
   const { id } = useParams();
   const { token } = useAuthContext();
   const [data, setData] = useState<any>(null);
+  const [modal, setModal] = useState({
+    show: false,
+    type: "",
+  });
 
-  const { isLoading } = useQuery("collector-units", async () => {
+  const { isLoading, error } = useQuery("collector-units", async () => {
     const { data } = await borlagoapi.get(
       `/administrator/collector-unit/detail/${id}`,
       {
@@ -45,6 +52,14 @@ const CollectorUnitDetailPage = () => {
         <Loader size="md" />
       ) : data ? (
         <Wrapper>
+          <AddOrRemoveCollectorModal
+            setShowModal={setModal}
+            setData={setData}
+            unitName={data.name}
+            show={modal.show}
+            type={modal.type}
+          />
+
           <Name>{data.name}</Name>
 
           <div className="details">
@@ -78,33 +93,59 @@ const CollectorUnitDetailPage = () => {
               </MapContainer>
             </CurrentLocation>
 
-            {data.collectors.map((collector: any) => (
-              <Collectors key={collector.id}>
-                <p>{t("page.collectorUnitDetail.collectors")}</p>
+            <Collectors>
+              <p>{t("page.collectorUnitDetail.collectors")}</p>
+              {data.collectors.length > 0 && (
                 <Heading>
                   <span>{t("page.collectors.collectorId")}</span>
                   <span>{t("page.collectors.name")}</span>
                   <span>{t("page.collectors.gender")}</span>
                   <span></span>
                 </Heading>
+              )}
+              {data.collectors.map((collector: any) => (
                 <CollectorTile
                   id={collector.id}
+                  key={collector.id}
                   firstName={collector.first_name}
                   lastName={collector.last_name}
                   collectorId={collector.collector_id}
                   gender={collector.gender}
                   profilePhoto={collector.profile_photo}
                 />
-                <Button style={{ marginTop: "10px" }} width="100%">
-                  {t("btn.editCollectors")}
+              ))}
+              <div className="button-area">
+                <Button
+                  width={data.collectors.length > 0 ? "49%" : "0"}
+                  color={theme.color.error}
+                  onClick={() =>
+                    setModal({
+                      show: true,
+                      type: "remove",
+                    })
+                  }
+                >
+                  {t("btn.removeCollector")}
                 </Button>
-              </Collectors>
-            ))}
+
+                <Button
+                  width={data.collectors.length > 0 ? "49%" : "100%"}
+                  onClick={() =>
+                    setModal({
+                      show: true,
+                      type: "add",
+                    })
+                  }
+                >
+                  {t("btn.addCollector")}
+                </Button>
+              </div>
+            </Collectors>
           </div>
         </Wrapper>
-      ) : (
+      ) : error ? (
         <h1>{t("error.wrong")}</h1>
-      )}
+      ) : null}
     </PageContainer>
   );
 };

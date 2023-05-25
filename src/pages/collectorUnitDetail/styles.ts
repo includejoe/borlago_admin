@@ -63,6 +63,13 @@ export const Collectors = styled.div`
   display: flex;
   flex-direction: column;
 
+  .button-area {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
   p {
     font-weight: 600;
   }

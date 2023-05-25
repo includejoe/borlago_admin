@@ -9,6 +9,7 @@ import DashboardLayout from "@layouts/dashboardLayout";
 
 // pages
 import LoginPage from "@pages/login";
+import ChatsPage from "@pages/chats";
 import CollectorsPage from "@pages/collectors";
 import CollectorUnitsPage from "@pages/collectorUnits";
 import CollectorUnitDetailPage from "@pages/collectorUnitDetail";
@@ -81,6 +82,15 @@ const App: React.FC = () => {
             element={
               <DashboardLayout>
                 <WasteCollectionRequestsPage />
+              </DashboardLayout>
+            }
+          />
+
+          <Route
+            path="/chats/"
+            element={
+              <DashboardLayout>
+                <ChatsPage />
               </DashboardLayout>
             }
           />
