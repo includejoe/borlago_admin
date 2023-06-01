@@ -12,7 +12,8 @@ const breakPoint: Theme["breakPoint"] = {
 };
 
 // colors
-const primaryVariantColor = "#421ed437";
+const primaryColor = "#d16e11";
+const primaryVariantColor = "#d16e1147";
 const secondaryColor = "#940a28";
 const secondaryColorVariant = "#940a2857";
 
@@ -24,7 +25,7 @@ export const light: Theme = {
     secondary: "#525252",
   },
   color: {
-    primary: "#5A38E3",
+    primary: primaryColor,
     primaryVariant: primaryVariantColor,
     secondary: secondaryColor,
     secondaryVariant: secondaryColorVariant,
@@ -48,7 +49,7 @@ export const dark: Theme = {
     secondary: "#e3e3e3",
   },
   color: {
-    primary: "#775CE8",
+    primary: primaryColor,
     primaryVariant: primaryVariantColor,
     secondary: secondaryColor,
     secondaryVariant: secondaryColorVariant,
