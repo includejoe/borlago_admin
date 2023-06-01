@@ -18,11 +18,11 @@ import WasteCollectionRequestsPage from "@pages/wasteCollectionRequests";
 import WasteCollectionRequestDetailPage from "@pages/wasteCollectionRequestDetail";
 import SettingsPage from "@pages/settings";
 
-// TODO: Add Collector to Unit Modal
 // TODO: fix multiple google map instances (Loading...)
 // TODO: put Marker on google map
 // TODO: save profile image to supabase storage bucket
 // TODO: make update user details request
+// TODO: + chats
 
 const App: React.FC = () => {
   const { isDark } = useThemeContext();
