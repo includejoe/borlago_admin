@@ -34,9 +34,9 @@ const PasswordInput: React.FC<TextInputProps> = ({
           onBlur={onBlur}
         />
         {hideText ? (
-          <IoMdEye className="icon" onClick={() => setHideText(false)} />
+          <IoMdEyeOff className="icon" onClick={() => setHideText(false)} />
         ) : (
-          <IoMdEyeOff className="icon" onClick={() => setHideText(true)} />
+          <IoMdEye className="icon" onClick={() => setHideText(true)} />
         )}
       </PasswordInputWrapper>
       {isError ? <p>{error}</p> : null}

@@ -7,16 +7,16 @@ import { Wrapper, WCRStatus } from "./styles";
 
 interface WasteCollectionRequestTileProps {
   id: string;
+  publicId: string;
   type: string;
-  location: string;
   status: number;
   createdAt: string;
 }
 
 const WasteCollectionRequestTile: React.FC<WasteCollectionRequestTileProps> = ({
   id,
+  publicId,
   type,
-  location,
   status,
   createdAt,
 }) => {
@@ -28,8 +28,8 @@ const WasteCollectionRequestTile: React.FC<WasteCollectionRequestTileProps> = ({
 
   return (
     <Wrapper to={`/wcr/${id}/`}>
-      <span id="name">{type}</span>
-      <span>{location}</span>
+      <span id="name">{publicId}</span>
+      <span>{type}</span>
       <WCRStatus status={status}>
         {status === 1
           ? t("page.wasteCollectionRequests.pending")

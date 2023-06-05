@@ -17,22 +17,26 @@
     "goodEvening": "Good evening, {{name}}"
   },
 
+  "heading": {
+    "id": "ID",
+    "name": "NAME",
+    "gender": "GENDER",
+    "country": "COUNTRY",
+    "region": "REGION",
+    "available": "AVAILABLE",
+    "type": "TYPE",
+    "status": "STATUS",
+    "createdAt": "CREATED AT"
+  },
+
   "page": {
     "login": {
       "forgotPassword": "Forgot your password?",
       "welcome": "Welcome back!",
       "login": "Please login to continue"
     },
-    "collectors": {
-      "collectorId": "COLLECTOR ID",
-      "name": "NAME",
-      "gender": "GENDER"
-    },
+    "collectors": {},
     "collectorUnits": {
-      "name": "NAME",
-      "country": "COUNTRY",
-      "region": "REGION",
-      "available": "AVAILABLE",
       "create": "Create Collector Unit",
       "search": "Search Collector Name",
       "filter": "FIlter Collector Units",
@@ -52,10 +56,6 @@
       "removeInfo": "A collector that does not belong to this unit can not be removed from this unit. Enter the ID of the collector to remove collector from this unit."
     },
     "wasteCollectionRequests": {
-      "type": "TYPE",
-      "location": "LOCATION",
-      "status": "STATUS",
-      "createdAt": "CREATED AT",
       "pending": "Pending",
       "inProgress": "In Progress",
       "completed": "Completed",

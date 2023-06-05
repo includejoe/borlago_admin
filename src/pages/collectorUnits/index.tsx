@@ -45,10 +45,10 @@ const CollectorUnitsPage = () => {
       <UnitFilter setUnits={setData} />
 
       <Heading>
-        <span>{t("page.collectorUnits.name")}</span>
-        <span>{t("page.collectorUnits.country")}</span>
-        <span>{t("page.collectorUnits.region")}</span>
-        <span>{t("page.collectorUnits.available")}</span>
+        <span>{t("heading.name")}</span>
+        <span>{t("heading.country")}</span>
+        <span>{t("heading.region")}</span>
+        <span>{t("heading.available")}</span>
       </Heading>
       {isLoading ? (
         <Loader size="md" />

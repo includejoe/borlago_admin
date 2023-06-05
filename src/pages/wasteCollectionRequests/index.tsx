@@ -23,10 +23,10 @@ const WasteCollectionRequestsPage = () => {
   return (
     <PageContainer>
       <Heading>
-        <span>{t("page.wasteCollectionRequests.type")}</span>
-        <span>{t("page.wasteCollectionRequests.location")}</span>
-        <span>{t("page.wasteCollectionRequests.status")}</span>
-        <span>{t("page.wasteCollectionRequests.createdAt")}</span>
+        <span>{t("heading.id")}</span>
+        <span>{t("heading.type")}</span>
+        <span>{t("heading.status")}</span>
+        <span>{t("heading.createdAt")}</span>
       </Heading>
       {isLoading ? (
         <Loader size="md" />
@@ -36,10 +36,10 @@ const WasteCollectionRequestsPage = () => {
           <WasteCollectionRequestTile
             key={wcr.id}
             id={wcr.id}
-            type={wcr.waste_type}
+            publicId={wcr.public_id}
             createdAt={wcr.created_at}
             status={wcr.status}
-            location={wcr.pick_up_location.address}
+            type={wcr.waste_type}
           />
         ))
       ) : (

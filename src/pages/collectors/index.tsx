@@ -27,9 +27,9 @@ const CollectorsPage = () => {
   return (
     <PageContainer>
       <Heading>
-        <span>{t("page.collectors.collectorId")}</span>
-        <span>{t("page.collectors.name")}</span>
-        <span>{t("page.collectors.gender")}</span>
+        <span>{t("heading.id")}</span>
+        <span>{t("heading.name")}</span>
+        <span>{t("heading.gender")}</span>
         <span></span>
       </Heading>
       {isLoading ? (
